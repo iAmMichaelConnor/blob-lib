@@ -1,0 +1,9 @@
+[package]
+name = "blob"
+type = "bin"
+authors = [""]
+compiler_version = ">=0.30.0"
+
+[dependencies]
+# bigint = { path = "../../../nargo/github.com/hashcloak/noir-bigintmain/" }
+bigint = { path = "../../../nargo/github.com/zac-williamson/noir-bignum/main" }
