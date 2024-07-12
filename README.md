@@ -20,6 +20,7 @@ You have two choices:
 - `git checkout domain-size-4096` for if you want to help debug why the test takes >1 hour to run.
 
 `cd noir-circuits/blob`
+
 `nargo compile` or jump straight to the test:
 
 ## Test
@@ -61,8 +62,11 @@ Ignore, if thinking about circuits:
 Clone this repo.
 
 `cd blob-lib`
+
 `nvm use 18`
+
 `yarn install`
+
 `yarn build`
 
 ## Compiling Contract
@@ -70,10 +74,13 @@ Clone this repo.
 To install foundry (which is really a bit of overkill in this situation, because we really just need solc):
 
 `cd contracts`
+
 `forge install --no-commit`
+
 `git submodule update --init --recursive ./lib`
 
 To compile `contracts/src/Blob.sol`:
+
 From `./contracts`:
 
 `forge build --evm-version cancun`
@@ -91,6 +98,7 @@ Start a hardhat network node in one window:
 Then in another window:
 
 `export PRIV_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80` - this is the default testing private key for anvil and hardhat.
+
 `yarn test`
 
 ## Notes
