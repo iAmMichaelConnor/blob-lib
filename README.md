@@ -2,33 +2,45 @@
 
 # Noir stuff:
 
-Before compiling, you need to add this Field definition to Zac's bigint library, locally, and then add corresponding new `mod` and `use` statements in fields.nr and lib.nr.
+Uses this fork of Zac's bignum lib. (The fork is only needed because the BLS12-381 params haven't been merged into Zac's main branch yet :) )
 
-The Nargo.toml points to a version of Zac's bigint library on Mike's machine; you'll need to update that path.
+https://github.com/iAmMichaelConnor/noir-bignum
+
+https://github.com/zac-williamson/noir-bignum/pull/2
+
+## Build
+
+Clone the repo
+`cd blob-lib`
+`cd noir-circuits/blob`
+`nargo compile`
+
+Currently, it takes ~1 min to compile.
+
+## Test
+
+`nargo test --show-output`
+
+Currently, it takes ~1 min to run a single test.
+
+NOTE: this lib doesn't use a domain size of 4096 yet - it only uses 8. The test took so long I didn't wait for it to finish for a domain of size 4096.
+
+## To run with domain size 4096
+
+> I don't know how long this would take to run `nargo test --show-output`, but it's longer than an hour.
+
+> Note: **the test will fail** because I haven't hard-coded the correct y value in the test's assertion; the currently-hard-coded value is intentionally for domain size 8.
+
+Swap the `mod` and `use` statements here in main.nr:
 
 ```rust
-use crate::BigNum;
-use crate::BigNumParamsTrait;
+// ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
+// mod config;
+mod smaller_config;
 
-struct Bls12_381_Fr_Params {}
-
-impl BigNumParamsTrait<3> for Bls12_381_Fr_Params {
-    fn redc_param() -> [Field; 3] {
-        [ 0x410fad2f92eb5c509cde80830358e4, 0x253b7fb78ddf0e2d772dc1f823b4d9, 0x008d54 ]
-    }
-    fn modulus() -> [Field; 3] {
-        [ 0xbda402fffe5bfeffffffff00000001, 0xa753299d7d483339d80809a1d80553, 0x0073ed ]
-    }
-    fn double_modulus() -> [Field; 3] {
-        [ 0x7b4805fffcb7fdfffffffe00000002, 0x4ea6533afa906673b0101343b00aa7, 0x00e7db ]
-    }
-    fn k() -> u64 {
-        255
-    }
-    fn modulus_bits() -> u64 {
-        255
-    }
-}
+// ONLY CHOOSE ONE OF THESE IMPORTS:
+// use crate::config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
+use crate::smaller_config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
 ```
 
 # Typescript & Solidity stuff:

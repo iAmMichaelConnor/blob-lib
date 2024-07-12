@@ -214,6 +214,7 @@ test.only("Test deploy", async () => {
   (blob as Buffer).write("abcd", 2 * 32 - 2, 2, "hex"); // each value is offset by a 32-byte 'Field' (as per the definition of "Field" in the eip-4844 spec).
   (blob as Buffer).write("69", 3 * 32 - 1, 1, "hex");
 
+  // These are the 0th and 1th roots of unity, taken from the eth consensus specs python lib.
   let z0 = Buffer.alloc(32);
   (z0 as Buffer).write("01", 31, "hex");
   let z1 = Buffer.alloc(32);
@@ -228,7 +229,6 @@ test.only("Test deploy", async () => {
   // Notice: we have to move away from viem's restricted kzg methods and access the underlying
   // cKzg methods, to compute a point at a z value that we can specify.
   const [proof0, y0] = cKzg.computeKzgProof(blob, z0);
-
   expect(bytesToHex(y0)).toBe(bytesToHex(blob.slice(0, 32)));
 
   const [proof1, y1] = cKzg.computeKzgProof(blob, z1);

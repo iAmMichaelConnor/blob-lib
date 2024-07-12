@@ -3,6 +3,7 @@
 // mod config;
 mod smaller_config;
 
+// ONLY CHOOSE ONE OF THESE IMPORTS:
 // use crate::config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
 use crate::smaller_config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
 
