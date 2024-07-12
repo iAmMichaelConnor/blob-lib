@@ -10,28 +10,37 @@ https://github.com/zac-williamson/noir-bignum/pull/2
 
 ## Build
 
-Clone the repo
-`cd blob-lib`
-`cd noir-circuits/blob`
-`nargo compile`
+Clone the repo.
 
-Currently, it takes ~1 min to compile.
+`cd blob-lib`
+
+You have two choices:
+
+- `git checkout main` will run for domain size of 8. (Recommended to make the tests actually work).
+- `git checkout domain-size-4096` for if you want to help debug why the test takes >1 hour to run.
+
+`cd noir-circuits/blob`
+`nargo compile` or jump straight to the test:
 
 ## Test
 
 `nargo test --show-output`
 
-Currently, it takes ~1 min to run a single test.
+Currently, it takes ~1 min to run a single test for domain size 8.
 
 NOTE: this lib doesn't use a domain size of 4096 yet - it only uses 8. The test took so long I didn't wait for it to finish for a domain of size 4096.
 
+NOTE: this circuit is mostly unconstrained still, because the `evaluate_quadratic_constraint()` calls throw errors. It could be me misunderstanding how to use this function.
+
 ## To run with domain size 4096
+
+`git checkout domain-size-4096`
 
 > I don't know how long this would take to run `nargo test --show-output`, but it's longer than an hour.
 
 > Note: **the test will fail** because I haven't hard-coded the correct y value in the test's assertion; the currently-hard-coded value is intentionally for domain size 8.
 
-Swap the `mod` and `use` statements here in main.nr:
+Or, you can swap the `mod` and `use` statements here in main.nr:
 
 ```rust
 // ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
