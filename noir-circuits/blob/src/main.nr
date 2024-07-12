@@ -1,12 +1,11 @@
-mod config;
 
-// use dep::bigint::{BigNum, fields::{bn254Fq::BNParams}};
-use crate::config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
+// ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
+// mod config;
+mod smaller_config;
 
-// The BN Fr Field size: don't change this.
-global FIELD_MODULUS: [Field; 3] = [
-    0x000000000000000000000000000000000033E84879B9709143E1F593F0000001, 0x00000000000000000000000000000000004E72E131A029B85045B68181585D28, 0x0000000000000000000000000000000000000000000000000000000000003064
-];
+// use crate::config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
+use crate::smaller_config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
+
 
 /**
  *                    ___d-1 
@@ -25,39 +24,37 @@ global FIELD_MODULUS: [Field; 3] = [
  * - (1 / d)
  *                   
  */
-fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub Field {
-    // let y: F = field_to_bignum(x);
+fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
 
-    // z ^ 4096
-    let mut count = 0;
+    // z ^ D:
+
     let mut t1 = z.__mulmod(z);
-    // BigNum::evaluate_quadratic_expression([[z]], [[false]], [[z]], [[false]], [t1], [true]);
-    println(t1);
-    count += 1;
+
+    // This doesn't throw an error - hooray!
+    BigNum::evaluate_quadratic_expression([[z]], [[false]], [[z]], [[false]], [t1], [true]);
 
     let mut t2: F = BigNum::new();
     for _i in 0..LOG_FIELDS_PER_BLOB - 1 {
         t2 = t1.__mulmod(t1);
+
+        // GRATUITOUS USAGE OF as_witness, LIKE THROWING DARTS AT A DARTBOARD AND HOPING THIS HELPS
         std::as_witness(t2.limbs[0]);
         std::as_witness(t2.limbs[1]);
         std::as_witness(t2.limbs[2]);
 
-        // BigNum::evaluate_quadratic_expression([[t1]], [[false]], [[t1]], [[false]], [t2], [true]);
-        count += 1;
+        // This doesn't throw an error - hooray!
+        BigNum::evaluate_quadratic_expression([[t1]], [[false]], [[t1]], [[false]], [t2], [true]);
+
         t1 = t2;
         std::as_witness(t1.limbs[0]);
         std::as_witness(t1.limbs[1]);
         std::as_witness(t1.limbs[2]);
-
-        println(t1);
     }
 
     let z_pow_d = t1;
-    println(z_pow_d);
 
-    assert(count == LOG_FIELDS_PER_BLOB);
 
-    // factor
+    // factor:
 
     let one: F = BigNum::one();
 
@@ -67,16 +64,31 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub Field {
     std::as_witness(t1.limbs[2]);
 
     let factor = t1.__mulmod(D_INV);
+
+    // This errors:
     // BigNum::evaluate_quadratic_expression(
     //     [[t1]],
     //     [[false]],
     //     [[D_INV]],
     //     [[false]],
-    //     [factor, z_pow_d, one, t1],
-    //     [true, false, true, true]
+    //     [factor],
+    //     [true]
     // );
 
-    // sum
+    // I actually don't know how to use this function to evaluate a simple non-quadratic constraint. Maybe I shouldn't be, and I shoult be calling the sub / add functions?
+    // This errors:
+    // BigNum::evaluate_quadratic_expression(
+    //     [[]],
+    //     [[]],
+    //     [[]],
+    //     [[]],
+    //     [z_pow_d, one, t1],
+    //     [false, true, true]
+    // );
+
+
+    // sum:
+
     let mut sum: F = BigNum::new();
     let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
@@ -92,6 +104,8 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub Field {
         std::as_witness(frac.limbs[1]);
         std::as_witness(frac.limbs[2]);
 
+        // I was trying to combine the above div and sub into one call to `evaluate_quadratic_constraint`, but I'm not sure that's sound... and it breaks anyway.
+        // This errors:
         // BigNum::evaluate_quadratic_expression(
         //     [[denom]],
         //     [[false]],
@@ -117,6 +131,8 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub Field {
         std::as_witness(sum.limbs[2]);
     }
 
+    // I was hoping I could do this, which would be nice and efficient.
+    // This errors:
     // BigNum::evaluate_quadratic_expression(
     //     [ys],
     //     [[false; FIELDS_PER_BLOB]],
@@ -126,121 +142,37 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub Field {
     //     [true]
     // );
 
+
+    // y:
+
     let y = factor.__mulmod(sum);
 
+    // This errors:
     // BigNum::evaluate_quadratic_expression([[factor]], [[false]], [[sum]], [[false]], [y], [true]);
 
     println(y);
 
-    y.limbs[0]
+    y
 }
 
-// Limbs are little-endian. The content of each limb is big-endian.
-// It would be more efficient to implement a `sub` method and check the carry
-unconstrained fn __limbs_gt<let N: u64>(x: [Field; N], y: [Field; N]) -> bool {
-    let mut result: Field = 0;
-
-    // Working backwards through the limbs, find the first nonzero comparison point.
-    let mut biggest_nonzero_limb_index = N - 1;
-    for i in 0..N {
-        let j = N - i - 1;
-        if (x[j] != 0) | (y[j] != 0) {
-            biggest_nonzero_limb_index = j;
-            break;
-        }
-    }
-
-    // Working from the first comparable limbs, decompose each limb into bytes, and compare the bytes from their big end to their little end until you find which is greater.
-    for i in 0..biggest_nonzero_limb_index + 1 {
-        let j = biggest_nonzero_limb_index - i;
-
-        let x_bytes = x[j].to_be_bytes(15);
-        let y_bytes = y[j].to_be_bytes(15);
-
-        for k in 0..15 {
-            if x_bytes[k] == y_bytes[k] {
-                continue;
-            }
-            if x_bytes[k] > y_bytes[k] {
-                result = 1;
-                break;
-            }
-            result = 2;
-            break;
-        }
-        if result != 0 {
-            break;
-        }
-    }
-
-    result == 1
-}
-
-unconstrained fn __field_to_bytes(x: Field) -> [u8; 32] {
-    let x_bytes_slice = x.to_be_bytes(32);
-    let mut x_bytes = [0; 32];
-    for i in 0..32 {
-        x_bytes[i] = x_bytes_slice[i];
-    }
-    x_bytes
-}
-
-unconstrained fn __field_to_bignum(x: Field) -> F {
-    let x_bytes = __field_to_bytes(x);
-    BigNum::from_byte_be(x_bytes)
-}
-
-unconstrained fn __field_to_bignum_limbs(x: Field) -> [Field; 3] {
-    __field_to_bignum(x).limbs
-}
-
-// Only works for bignums with modulus larger than the BN Fr size.
-fn field_to_bignum(x: Field) -> F {
-    assert(__limbs_gt(Bls12_381_Fr_Params::modulus(), FIELD_MODULUS));
-    let __x_limbs = __field_to_bignum_limbs(x);
-
-    let mut check = __x_limbs[3 - 1];
-    let limb_max = 2.pow_32(120);
-    for i in 1..3 {
-        check *= limb_max;
-        check += __x_limbs[3 - i - 1];
-    }
-    assert(check == x);
-
-    BigNum { limbs: __x_limbs }
-}
-
-fn bignum_to_field(x: F) -> Field {
-    let mut result: Field = 0;
-    let limb_max = 2.pow_32(120);
-    result += x.limbs[3 - 1];
-    for i in 1..3 {
-        result *= limb_max;
-        result += x.limbs[3 - i - 1];
-    }
-    result
-}
 
 #[test]
 fn test_main() {
     let z: F = BigNum { limbs: [2, 0, 0] };
 
-    let mut y: [F; FIELDS_PER_BLOB] = [BigNum::new(); 4096];
+    // many y's form a blob:
+    let mut ys: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
 
-    y[0] = BigNum { limbs: [0x0000000000000000000000000000000000000000000000000000000000001234, 0, 0] };
-    y[1] = BigNum { limbs: [0x000000000000000000000000000000000000000000000000000000000000abcd, 0, 0] };
-    y[2] = BigNum { limbs: [0x0000000000000000000000000000000000000000000000000000000000000069, 0, 0] };
+    ys[0] = BigNum { limbs: [0x1234, 0, 0] };
+    ys[1] = BigNum { limbs: [0xabcd, 0, 0] };
+    ys[2] = BigNum { limbs: [0x69, 0, 0] };
 
-    main(z, y);
-    // Uncomment to make test fail
-    // main(1, 1);
+    // evaluate the blob at z = 2 to yield y:
+    let y = main(z, ys);
+
+    // Computed with the eth consensus specs py lib (after hacking it to cope with blobs of size 8 instead of 4096):
+    // THIS CHECK IS ONLY VALID USING THE simple_config.nr:
+    assert(y.limbs[0] == 0xb04cdea4304000053abffffffb203a);
+    assert(y.limbs[1] == 0x0000000002e30785c8afa4496f8e38);
+    assert(y.limbs[2] == 0x000000);
 }
-
-// #[test]
-// fn test_main_again() {
-//     let c = main(21888242871839275222246405745257275088548364400416034343698204186575808495616, 21888242871839275222246405745257275088548364400416034343698204186575808495616);
-
-//     assert(c == 4886695622894899639804758159951353694468790955993068545941373991772988819618);
-//     // Uncomment to make test fail
-//     // main(1, 1);
-// }

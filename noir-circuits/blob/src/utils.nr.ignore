@@ -1,0 +1,91 @@
+// // NOT USED BY ANYTHING, BUT POTENTIALLY USEFUL
+
+// // Limbs are little-endian. The content of each limb is big-endian.
+// // It would be more efficient to implement a `sub` method and check the carry
+// unconstrained fn __limbs_gt<let N: u64>(x: [Field; N], y: [Field; N]) -> bool {
+//     let mut result: Field = 0;
+
+//     // Working backwards through the limbs, find the first nonzero comparison point.
+//     let mut biggest_nonzero_limb_index = N - 1;
+//     for i in 0..N {
+//         let j = N - i - 1;
+//         if (x[j] != 0) | (y[j] != 0) {
+//             biggest_nonzero_limb_index = j;
+//             break;
+//         }
+//     }
+
+//     // Working from the first comparable limbs, decompose each limb into bytes, and compare the bytes from their big end to their little end until you find which is greater.
+//     for i in 0..biggest_nonzero_limb_index + 1 {
+//         let j = biggest_nonzero_limb_index - i;
+
+//         let x_bytes = x[j].to_be_bytes(15);
+//         let y_bytes = y[j].to_be_bytes(15);
+
+//         for k in 0..15 {
+//             if x_bytes[k] == y_bytes[k] {
+//                 continue;
+//             }
+//             if x_bytes[k] > y_bytes[k] {
+//                 result = 1;
+//                 break;
+//             }
+//             result = 2;
+//             break;
+//         }
+//         if result != 0 {
+//             break;
+//         }
+//     }
+
+//     result == 1
+// }
+
+// unconstrained fn __field_to_bytes(x: Field) -> [u8; 32] {
+//     let x_bytes_slice = x.to_be_bytes(32);
+//     let mut x_bytes = [0; 32];
+//     for i in 0..32 {
+//         x_bytes[i] = x_bytes_slice[i];
+//     }
+//     x_bytes
+// }
+
+// unconstrained fn __field_to_bignum(x: Field) -> F {
+//     let x_bytes = __field_to_bytes(x);
+//     BigNum::from_byte_be(x_bytes)
+// }
+
+// unconstrained fn __field_to_bignum_limbs(x: Field) -> [Field; 3] {
+//     __field_to_bignum(x).limbs
+// }
+
+// // The BN Fr Field size: don't change this.
+// global FIELD_MODULUS: [Field; 3] = [
+//     0x000000000000000000000000000000000033E84879B9709143E1F593F0000001, 0x00000000000000000000000000000000004E72E131A029B85045B68181585D28, 0x0000000000000000000000000000000000000000000000000000000000003064
+// ];
+// // Only works for bignums with modulus larger than the BN Fr size.
+// fn field_to_bignum(x: Field) -> F {
+//     assert(__limbs_gt(Bls12_381_Fr_Params::modulus(), FIELD_MODULUS));
+//     let __x_limbs = __field_to_bignum_limbs(x);
+
+//     let mut check = __x_limbs[3 - 1];
+//     let limb_max = 2.pow_32(120);
+//     for i in 1..3 {
+//         check *= limb_max;
+//         check += __x_limbs[3 - i - 1];
+//     }
+//     assert(check == x);
+
+//     BigNum { limbs: __x_limbs }
+// }
+
+// fn bignum_to_field(x: F) -> Field {
+//     let mut result: Field = 0;
+//     let limb_max = 2.pow_32(120);
+//     result += x.limbs[3 - 1];
+//     for i in 1..3 {
+//         result *= limb_max;
+//         result += x.limbs[3 - i - 1];
+//     }
+//     result
+// }
