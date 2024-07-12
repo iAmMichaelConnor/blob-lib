@@ -1,20 +1,20 @@
 // ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
-// mod config;
-// mod negative_roots;
-mod smaller_config;
+mod config;
+mod negative_roots;
+// mod smaller_config;
 
 // ONLY CHOOSE ONE OF THESE IMPORTS:
-// use crate::{
-//     config::{
-//     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
-//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
-// },
-//     negative_roots::NEGATIVE_ROOTS
-// };
-use crate::smaller_config::{
+use crate::{
+    config::{
     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
-    FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
+    FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
+},
+    negative_roots::NEGATIVE_ROOTS
 };
+// use crate::smaller_config::{
+//     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
+//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
+// };
 
 use std::hash::poseidon2;
 
@@ -460,6 +460,8 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 // nargo test --show-output test_main
 #[test]
 fn test_barycentric() {
+    let a = "I'M USING THIS COMPILER WARNING TO TELL YOU THAT THIS TEST WILL TAKE > 1 HOUR ON THE MAINFRAME- AND MIGHT NEVER COMPLETE";
+
     let z: F = BigNum { limbs: [2, 0, 0] };
 
     // many y's form a blob:
