@@ -1,10 +1,10 @@
 // ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
-// mod config;
-mod smaller_config;
+mod config;
+// mod smaller_config;
 
 // ONLY CHOOSE ONE OF THESE IMPORTS:
-// use crate::config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
-use crate::smaller_config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
+use crate::config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
+// use crate::smaller_config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
 
 unconstrained fn __batch_invert_impl<let N: u64>(mut x: [F; N]) -> [F; N] {
     let mut accumulator: F = BigNum::one();
@@ -175,8 +175,7 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
         std::as_witness(fracs[i].limbs[2]);
     }
 
-    let SUM_SLICES = FIELDS_PER_BLOB / 8 + ((FIELDS_PER_BLOB % 8 != 0) as u64);
-    // let SUM_SLICES = FIELDS_PER_BLOB / 8;
+    let SUM_SLICES = FIELDS_PER_BLOB / 8;
 
     // OK so...we can add multiple product terms into a sum...but I am not sure how many!
     // we are computing 254 * 254 bit products and we need to ensure each product limb doesn't overflow
@@ -186,16 +185,15 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
     // which implies...we can accomodate up to EIGHT additions of product terms before we risk overflowing
     // (this is really messy! I never considered the case of giant linear sequences of products)
     let mut sum: F = BigNum::new();
-    for i in 0..SUM_SLICES - 1 {
-        // for i in 0..SUM_SLICES {
+    for i in 0..SUM_SLICES {
         let mut partial_sum: F = BigNum::new();
         let mut lhs: [F; 8] = [BigNum::new(); 8];
         let mut rhs = lhs;
 
         for j in 0..8 {
-            lhs[j] = ys[i * 8 + j];
-            rhs[j] = fracs[i * 8 + j];
-
+            let k = i * 8 + j;
+            lhs[j] = ys[k];
+            rhs[j] = fracs[k];
             std::as_witness(lhs[j].limbs[0]);
             std::as_witness(lhs[j].limbs[1]);
             std::as_witness(lhs[j].limbs[2]);
@@ -203,7 +201,7 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
             std::as_witness(rhs[j].limbs[1]);
             std::as_witness(rhs[j].limbs[2]);
 
-            let summand = ys[i].__mulmod(fracs[i]);
+            let summand = ys[k].__mulmod(fracs[k]);
             partial_sum = partial_sum.__addmod(summand);
 
             std::as_witness(partial_sum.limbs[0]);
@@ -211,6 +209,7 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
             std::as_witness(partial_sum.limbs[2]);
         }
         let mut sum_out = sum.__addmod(partial_sum);
+
         // BigNum::evaluate_quadratic_expression(
         //     [lhs],
         //     [[false; 8]],
@@ -220,28 +219,7 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
         //     [false, true]
         // );
         sum = sum_out;
-        std::as_witness(sum.limbs[0]);
-        std::as_witness(sum.limbs[1]);
-        std::as_witness(sum.limbs[2]);
-    }
 
-    // ok so if FIELDS_PER_BLOB does not divide by 8 we have a problem. Thankfully it always does, so I've commented-out this :)
-    // evaluate_quadratic_expression needs constant-sized arrays,
-    // and we can't currently derive array size params from variables (e.g. FIELDS_PER_BLOB / 8)
-    // sooooo we just do the final 8 terms individually. yes this is really messy
-    let overhang_start = (SUM_SLICES - 1) * 8;
-    let overhang_end = FIELDS_PER_BLOB;
-    for i in overhang_start..overhang_end {
-        let sum_out = sum.__addmod(ys[i].__mulmod(fracs[i]));
-        // BigNum::evaluate_quadratic_expression(
-        //     [[ys[i]]],
-        //     [[false]],
-        //     [[fracs[i]]],
-        //     [[false]],
-        //     [sum, sum_out],
-        //     [false, true]
-        // );
-        sum = sum_out;
         std::as_witness(sum.limbs[0]);
         std::as_witness(sum.limbs[1]);
         std::as_witness(sum.limbs[2]);
@@ -294,6 +272,8 @@ fn test_main() {
         ];
         // Also computed with cKzg, in the typescript tests:
         // 0x049a902c5b4968d755b6f49c0231e15af80c62e352a428e8e9842eadc1c106bd
+        // Here's the incorrect value it's giving, when tested:
+        // BigNum { limbs: [0x63171a952147474c21756e0e0835e8, 0x8162da4b46baadb7a4e0118f0ad7c0, 0x24d4] }
     }
     if (FIELDS_PER_BLOB == 8) {
         // Computed with the eth consensus specs py lib (after hacking it to cope with blobs of size 8 instead of 4096):
