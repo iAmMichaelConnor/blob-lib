@@ -6,7 +6,9 @@ global FIELDS_PER_BLOB: u64 = 8; // actually 4096
 global LOG_FIELDS_PER_BLOB: u64 = 3; // actually 12
 // global D_LIMBS_SLICE: [Field] = 
 global D: F = BigNum { limbs: [8, 0, 0] };
-global D_INV = D.__invmod(); // TODO: actual value
+// global D_INV = D.__invmod(); // TODO: actual value
+
+global D_INV = BigNum { limbs: [0x45ef829ffe907f1fffffff20000001, 0xf268c469cd9f2cd29d07086d9d04a9, 0x656f] };
 
 global ROOTS: [F; FIELDS_PER_BLOB] = [ 
     BigNum { limbs: [ 0x000000000000000000000000000001, 0x000000000000000000000000000000, 0x000000 ] } ,

@@ -224,6 +224,9 @@ test.only("Test deploy", async () => {
     "hex"
   );
 
+  let z = Buffer.alloc(32);
+  (z as Buffer).write("02", 31, "hex");
+
   const commitment = kzg.blobToKzgCommitment(blob);
 
   // Notice: we have to move away from viem's restricted kzg methods and access the underlying
@@ -233,6 +236,9 @@ test.only("Test deploy", async () => {
 
   const [proof1, y1] = cKzg.computeKzgProof(blob, z1);
   expect(bytesToHex(y1)).toBe(bytesToHex(blob.slice(32, 64)));
+
+  const [proof, y] = cKzg.computeKzgProof(blob, z);
+  console.log("y for testing:", bytesToHex(y));
 
   const versionedHash = commitmentToVersionedHash({ commitment });
 
