@@ -6,6 +6,8 @@ mod config;
 use crate::config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
 // use crate::smaller_config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
 
+use std::hash::poseidon2;
+
 unconstrained fn __batch_invert_impl<let N: u64>(mut x: [F; N]) -> [F; N] {
     let mut accumulator: F = BigNum::one();
 
@@ -30,12 +32,140 @@ unconstrained fn __batch_invert_impl<let N: u64>(mut x: [F; N]) -> [F; N] {
     x
 }
 
-unconstrained fn __compute_inv_denoms(z: F) -> [F; FIELDS_PER_BLOB] {
-    let mut denoms: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
-    for i in 0..FIELDS_PER_BLOB {
-        denoms[i] = z.__submod(ROOTS[i]);
+// Not used because it resulted in "stack too deep":
+// unconstrained fn __compute_inv_denoms(z: F) -> [F; FIELDS_PER_BLOB] {
+//     let mut denoms: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
+//     for i in 0..FIELDS_PER_BLOB {
+//         denoms[i] = z.__submod(ROOTS[i]);
+//     }
+//     __batch_invert_impl(denoms)
+// }
+
+unconstrained fn __field_to_bytes(x: Field) -> [u8; 32] {
+    let x_bytes_slice = x.to_be_bytes(32);
+    let mut x_bytes = [0; 32];
+    for i in 0..32 {
+        x_bytes[i] = x_bytes_slice[i];
     }
-    __batch_invert_impl(denoms)
+    x_bytes
+}
+
+unconstrained fn __field_to_bignum(x: Field) -> F {
+    let x_bytes = __field_to_bytes(x);
+    BigNum::from_byte_be(x_bytes)
+}
+
+unconstrained fn __field_to_bignum_limbs(x: Field) -> [Field; 3] {
+    __field_to_bignum(x).limbs
+}
+
+// Only works for bignums with modulus larger than the BN Fr size (which is true
+// for the bls12-381 Fr field).
+fn field_to_bignum(x: Field) -> F {
+    let __x_limbs = __field_to_bignum_limbs(x);
+
+    let mut check = __x_limbs[3 - 1];
+    let limb_max = 2.pow_32(120);
+    for i in 1..3 {
+        check *= limb_max;
+        check += __x_limbs[3 - i - 1];
+    }
+    assert(check == x);
+
+    BigNum { limbs: __x_limbs }
+}
+
+// DANGER: this assumes the input bignum is <= the Noir field size.
+// Only use this if you _know_ the data being passed in is small enough.
+//
+// Or actually, maybe it's not unsafe, if Field catches overflows?
+fn unsafe_bignum_to_field(x: F) -> Field {
+    let mut result: Field = 0;
+    let limb_max = 2.pow_32(120);
+    result += x.limbs[3 - 1];
+    for i in 1..3 {
+        result *= limb_max;
+        result += x.limbs[3 - i - 1];
+    }
+    result
+}
+
+fn bignum_to_bytes(x: F) -> [u8] {
+    let limb_0_bytes: [u8] = x.limbs[0].to_be_bytes(15);
+    let limb_1_bytes: [u8] = x.limbs[1].to_be_bytes(15);
+    let limb_2_bytes: [u8] = x.limbs[2].to_be_bytes(2);
+    let out = limb_2_bytes.append(limb_1_bytes).append(limb_0_bytes);
+    std::static_assert(out.len() == 32, "bad byte decomposition of bignum");
+    out
+}
+
+// fn kzg_commitment_to_bytes(c: [Field; 2]) -> [u8] {
+//     let limb_0_bytes: [u8] = x.limbs[0].to_be_bytes(32);
+//     let limb_1_bytes: [u8] = x.limbs[1].to_be_bytes(16);
+
+//     let out = limb_2_bytes.append(limb_1_bytes).append(limb_0_bytes);
+//     std::static_assert(out.len() == 32, "bad byte decomposition of bignum");
+//     out
+// }
+
+// DANGER: this assumes the input bignum is <= the Noir field size.
+// Only use this if you _know_ the data being passed in is small enough.
+//
+// This is inefficient, in the sense that we discard ~1 bit of blob space per 
+// 255-bit blob field, when converting it to a 245-bit noir field. Over the whole blob, 
+// we end up discarding 1 bit * 4096 fields_per_blob = 512 bytes = 16 words of data.
+// BUT, it is much simpler to do this than to reconstitute 4096 disparate bits across
+// the whole blob into 16 words. Perhaps the more complex approach should only be 
+// taken once aztec blobs are sufficiently full?
+fn unsafe_blob_to_fields(blob: [F; FIELDS_PER_BLOB]) -> [Field; FIELDS_PER_BLOB] {
+    let mut blob_as_fields: [Field; FIELDS_PER_BLOB] = [0; FIELDS_PER_BLOB];
+    for i in 0..FIELDS_PER_BLOB {
+        blob_as_fields[i] = unsafe_bignum_to_field(blob[i]);
+    }
+    blob_as_fields
+}
+
+// TODO: We'll want to hash this data
+// in an arrangement which makes sense to the aztec protocol. THink about this more.
+fn hash_blob(blob: [F; FIELDS_PER_BLOB]) -> Field {
+    let mut blob_as_fields = unsafe_blob_to_fields(blob);
+    let hash = poseidon2::Poseidon2::hash(blob_as_fields, blob_as_fields.len());
+    hash
+}
+
+fn hash_kzg_commitment(kzg_commitment: [Field; 2]) -> Field {
+    let hash = poseidon2::Poseidon2::hash(kzg_commitment, kzg_commitment.len());
+    hash
+}
+
+fn compute_challenge(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> Field {
+    let kzg_commitment_hash = hash_kzg_commitment(kzg_commitment);
+    let blob_hash = hash_blob(blob);
+    let challenge = poseidon2::Poseidon2::hash([blob_hash, kzg_commitment_hash], 2);
+    challenge
+}
+
+// TODO: implement space-efficient blob packing, if we care about the currently-wasted
+// 512-bytes of blob data.
+fn blob_to_fields__tightly_packed() {}
+
+// Note: the kzg_commitment is technically a BLS12-381 point in (Fq, Fq), but
+// we haven't implemented Fq; only Fr, and we don't actually need to operate on it; 
+// we just need the bits of data. So we've simply encoded it as fitting inside a 
+// [Field; 2], since two 254-bit fields more-than covers 381+1=382 bits.
+fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F, [Field; 2]) {
+    let challenge_z: Field = compute_challenge(blob, kzg_commitment);
+    let challenge_z_as_bignum: F = field_to_bignum(challenge_z);
+
+    let y = barycentric_evaluate_blob_at_z(challenge_z_as_bignum, blob);
+
+    let challenge_z_as_bytes: [u8] = challenge_z.to_be_bytes(32);
+    let y_as_bytes: [u8] = bignum_to_bytes(y);
+    // let kzg_commitment_as_bytes: [u8] = ()
+
+    // TODO: this return data needs to be TIGHTLY PACKED into bytes.
+    // TODO: then those bytes need to be sha256-hashed, to produce a single value that can be sent to ethereum for cheap snark verification. On ethereum, the bytes will be sent along with the sha256-hash of the bytes. The bytes will be used in the point evaluation precompile. The sha256-hash will form a part of the public inputs of the zk-snark proof.
+    (challenge_z, y, kzg_commitment)
 }
 
 /**
@@ -55,12 +185,12 @@ unconstrained fn __compute_inv_denoms(z: F) -> [F; FIELDS_PER_BLOB] {
  * - (1 / d)
  *                   
  */
-fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
+fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     // z ^ D:
 
     let mut t1 = z.__mulmod(z);
 
-    // BigNum::evaluate_quadratic_expression([[z]], [[false]], [[z]], [[false]], [t1], [true]);
+    BigNum::evaluate_quadratic_expression([[z]], [[false]], [[z]], [[false]], [t1], [true]);
 
     let mut t2: F = BigNum::new();
     for _i in 0..LOG_FIELDS_PER_BLOB - 1 {
@@ -71,7 +201,7 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
         std::as_witness(t2.limbs[1]);
         std::as_witness(t2.limbs[2]);
 
-        // BigNum::evaluate_quadratic_expression([[t1]], [[false]], [[t1]], [[false]], [t2], [true]);
+        BigNum::evaluate_quadratic_expression([[t1]], [[false]], [[t1]], [[false]], [t2], [true]);
 
         t1 = t2;
         std::as_witness(t1.limbs[0]);
@@ -249,7 +379,7 @@ fn main(z: F, ys: [F; FIELDS_PER_BLOB]) -> pub F {
 
 // nargo test --show-output test_main
 #[test]
-fn test_main() {
+fn test_barycentric() {
     let z: F = BigNum { limbs: [2, 0, 0] };
 
     // many y's form a blob:
@@ -260,7 +390,7 @@ fn test_main() {
     ys[2] = BigNum { limbs: [0x69, 0, 0] };
 
     // evaluate the blob at z = 2 to yield y:
-    let y = main(z, ys);
+    let y = barycentric_evaluate_blob_at_z(z, ys);
 
     let mut expected_y: [Field; 3] = [0; 3];
     if (FIELDS_PER_BLOB == 4096) {

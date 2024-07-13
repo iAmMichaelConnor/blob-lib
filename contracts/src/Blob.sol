@@ -59,48 +59,28 @@ contract Blob {
     //  * Note: the roots of unity are arranged in bit-reversal permutation, so you'll need a library to play with this stuff. You won't be able to mentally play with the polynomials.
     //  */
     function verifyKzgProof(bytes calldata input, uint256 _txId) public {
-        // bytes memory output;
-        // bool success;
-
+        // Check that the input blobhash matches the one submitted earlier:
         require(blobHashes[_txId][0] == bytes32(input[0:32]));
 
-        // Call the point evaluation precompile: https://eips.ethereum.org/EIPS/eip-4844#point-evaluation-precompile
-        // assembly {
-        //     /*
-        //         gasLimit: calling with gas equal to not(0), as we have here, will send all available gas to the function being called. This removes the need to guess or upper-bound the amount of gas being sent yourself. As an alternative, we could have guessed the gas needed: with: sub(gas, 2000)
-        //         to: the sha256 precompile is at address 0x2: Sending the amount of gas currently available to us, after subtracting 2000;
-        //         value: 0 (no ether will be sent to the contract)
-        //         inputOffset: The memory offset of the input data
-        //         inputSize: hex input size = 0xc0 = 192 bytes
-        //         outputOffset: where will the output be stored (in variable `output` in our case)
-        //         outputSize: 2 * 32-bytes = 0x40 in hex
-        //     */
-        //     let inPtr := mload(0x40)
-        //     calldatacopy(inPtr, input.offset, input.length)
-        //     success := call(not(0), 0x0a, 0, inPtr, 0xc0, output, 0x40)
-        //     // Use "invalid" to make gas estimation work
-        //     switch success
-        //     case 0 {
-        //         invalid()
-        //     }
-        // }
-
-        // Staticcall the point eval precompile:
+        // Staticcall the point eval precompile https://eips.ethereum.org/EIPS/eip-4844#point-evaluation-precompile :
         (bool success, bytes memory data) = address(0x0a).staticcall(input);
-
         require(success, "Point evaluation precompile failed");
 
-        // Validate that it actually actually succeeded:
-        (uint256 fieldElementsPerBlob, uint256 blsModulus) = abi.decode(
-            data,
-            (uint256, uint256)
-        );
-
-        require(
-            fieldElementsPerBlob == FIELD_ELEMENTS_PER_BLOB,
-            "Point eval precompile failed"
-        );
-        require(blsModulus == BLS_MODULUS, "Point eval precompile failed");
+        // Validate that it actually actually succeeded, by checking that the
+        // precompile returned the hard-coded values that it always should.
+        // TODO: we probably don't need to check both values - I'm just doing this
+        // to have a record of how to extract both values, and what they are.
+        {
+            (uint256 fieldElementsPerBlob, uint256 blsModulus) = abi.decode(
+                data,
+                (uint256, uint256)
+            );
+            require(
+                fieldElementsPerBlob == FIELD_ELEMENTS_PER_BLOB,
+                "Point eval precompile failed"
+            );
+            require(blsModulus == BLS_MODULUS, "Point eval precompile failed");
+        }
 
         emit PointEvaluationSuccess(success);
     }
