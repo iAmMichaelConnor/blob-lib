@@ -1,11 +1,15 @@
 // ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
 // mod config;
+// mod negative_roots;
 mod smaller_config;
 
 // ONLY CHOOSE ONE OF THESE IMPORTS:
-// use crate::config::{
+// use crate::{
+//     config::{
 //     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
-//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
+//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
+// },
+//     negative_roots::NEGATIVE_ROOTS
 // };
 use crate::smaller_config::{
     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
