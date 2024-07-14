@@ -4,3 +4,4 @@ node_modules/
 .vimdirs/
 package-lock.json
 yarn.lock
+target/

@@ -1,10 +1,16 @@
 // ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
-mod config;
-// mod smaller_config;
+// mod config;
+mod smaller_config;
 
 // ONLY CHOOSE ONE OF THESE IMPORTS:
-use crate::config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
-// use crate::smaller_config::{BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, D, D_INV, ROOTS};
+// use crate::config::{
+//     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
+//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
+// };
+use crate::smaller_config::{
+    BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
+    FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
+};
 
 use std::hash::poseidon2;
 
@@ -125,10 +131,52 @@ fn unsafe_blob_to_fields(blob: [F; FIELDS_PER_BLOB]) -> [Field; FIELDS_PER_BLOB]
     blob_as_fields
 }
 
+// DANGER: it's named as "unsafe" because the caller MUST already have checked that 
+// each blob Field is formatted as (u1, Field). I.e. the "rhs" 254-bits should already
+// fit within a Field. If the "rhs" 254 bits is larger than the field modulus,
+// there will be an uncaught overflow of the 254-bits in the Field, resulting in 
+// an unintended tiny value.
+//
+// For efficiency, the top_bit is kept as a Field throughout.
+fn unsafe_extract_top_bit(x: F) -> (Field, F) {
+    let top_limb: Field = x.limbs[3];
+    // The top_limb is at most 2 bytes (16 bits).
+    let top_bit: Field = (top_limb as u16 / 0x8000) as Field;
+    let top_limb_with_top_bit_removed = top_limb - top_bit * 0x8000;
+    let x_with_top_bit_removed: F = BigNum { limbs: [x.limbs[0], x.limbs[1], top_limb_with_top_bit_removed] };
+    (top_bit, x_with_top_bit_removed)
+}
+
+fn blob_to_fields__tightly_packed(blob: [F; FIELDS_PER_BLOB]) -> [Field; NOIR_FIELDS_PER_BLOB] {
+    let mut blob_as_fields: [Field; NOIR_FIELDS_PER_BLOB] = [0; NOIR_FIELDS_PER_BLOB];
+    let mut top_bits: [Field; FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB] = [0; FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB];
+    for i in 0..FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB {
+        let (top_bit, field_with_top_bit_removed): (Field, F) = unsafe_extract_top_bit(blob[i]);
+        top_bits[i] = top_bit;
+        blob_as_fields[i] = unsafe_bignum_to_field(field_with_top_bit_removed);
+    }
+    for i in FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB..FIELDS_PER_BLOB {
+        blob_as_fields[i] = unsafe_bignum_to_field(blob[i]);
+    }
+    for i in FIELDS_PER_BLOB..NOIR_FIELDS_PER_BLOB {
+        // the top_bits are assumed to be big-endian bit arrays:
+        let mut reconstituted_field = top_bits[0];
+        for j in 1..254 {
+            let k = i * 254 + j;
+            reconstituted_field *= 2;
+            reconstituted_field += top_bits[k];
+            std::as_witness(reconstituted_field);
+        }
+        blob_as_fields[i] = reconstituted_field;
+    }
+    blob_as_fields
+}
+
 // TODO: We'll want to hash this data
 // in an arrangement which makes sense to the aztec protocol. THink about this more.
 fn hash_blob(blob: [F; FIELDS_PER_BLOB]) -> Field {
-    let mut blob_as_fields = unsafe_blob_to_fields(blob);
+    // let mut blob_as_fields = unsafe_blob_to_fields(blob);
+    let mut blob_as_fields = blob_to_fields__tightly_packed(blob);
     let hash = poseidon2::Poseidon2::hash(blob_as_fields, blob_as_fields.len());
     hash
 }
@@ -145,10 +193,8 @@ fn compute_challenge(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> 
     challenge
 }
 
-// TODO: implement space-efficient blob packing, if we care about the currently-wasted
-// 512-bytes of blob data.
-fn blob_to_fields__tightly_packed() {}
-
+// ~500k constraints. 30 MINUTES TO COMPILE (due to all the brillig)! 
+//
 // Note: the kzg_commitment is technically a BLS12-381 point in (Fq, Fq), but
 // we haven't implemented Fq; only Fr, and we don't actually need to operate on it; 
 // we just need the bits of data. So we've simply encoded it as fitting inside a 
@@ -159,8 +205,8 @@ fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F
 
     let y = barycentric_evaluate_blob_at_z(challenge_z_as_bignum, blob);
 
-    let challenge_z_as_bytes: [u8] = challenge_z.to_be_bytes(32);
-    let y_as_bytes: [u8] = bignum_to_bytes(y);
+    // let challenge_z_as_bytes: [u8] = challenge_z.to_be_bytes(32);
+    // let y_as_bytes: [u8] = bignum_to_bytes(y);
     // let kzg_commitment_as_bytes: [u8] = ()
 
     // TODO: this return data needs to be TIGHTLY PACKED into bytes.
@@ -224,14 +270,14 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
     // (z_pow_d - one) * (D_INV) - factor = 0
     // z_pow_d * D_INV - D_INV - factor = 0
-    // BigNum::evaluate_quadratic_expression(
-    //     [[z_pow_d]],
-    //     [[false]],
-    //     [[D_INV]],
-    //     [[false]],
-    //     [factor, D_INV],
-    //     [true, true]
-    // );
+    BigNum::evaluate_quadratic_expression(
+        [[z_pow_d]],
+        [[false]],
+        [[D_INV]],
+        [[false]],
+        [factor, D_INV],
+        [true, true]
+    );
 
     //  // This version doesn't work:
     //  // BigNum::evaluate_quadratic_expression(
@@ -253,7 +299,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
     let mut denoms = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
-        denoms[i] = z.__submod(ROOTS[i]);
+        denoms[i] = z.__addmod(NEGATIVE_ROOTS[i]);
     }
     let inv_denoms = __batch_invert_impl(denoms);
 
@@ -264,40 +310,40 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
         let frac = num.__mulmod(inv_denom);
 
-        // roots[i] / (z - roots[i]) = frac 
-        // && (z - roots[i]) * inv_denom = 1.
+        // roots[i] / (z + neg_roots[i]) = frac 
+        // && (z + neg_roots[i]) * inv_denom = 1.
         //
-        // frac * (z - roots[i]) - roots[i] = 0
-        // inv_denom * (z - roots[i]) - 1 = 0
+        // frac * (z + neg_roots[i]) - roots[i] = 0
+        // inv_denom * (z + neg_roots[i]) - 1 = 0
         //
-        // (frac + inv_denom) * (z - roots[i]) - roots[i] - 1 = 0
+        // (frac + inv_denom) * (z + neg_roots[i]) - roots[i] - 1 = 0
         //
         // // BigNum::evaluate_quadratic_expression(
         // //     [[frac, inv_denom]],
         // //     [[false, false]],
-        // //     [[z, ROOTS[i]]],
-        // //     [[false, true]],
+        // //     [[z, NEGATIVE_ROOTS[i]]],
+        // //     [[false, false]],
         // //     [ROOTS[i], one],
         // //     [true, true]
         // // );
 
         // Alternative:
-        // BigNum::evaluate_quadratic_expression(
-        //     [[frac]],
-        //     [[false]],
-        //     [[z, ROOTS[i]]],
-        //     [[false, true]],
-        //     [ROOTS[i]],
-        //     [true]
-        // );
-        // BigNum::evaluate_quadratic_expression(
-        //     [[inv_denom]],
-        //     [[false]],
-        //     [[z, ROOTS[i]]],
-        //     [[false, true]],
-        //     [one],
-        //     [true]
-        // );
+        BigNum::evaluate_quadratic_expression(
+            [[frac]],
+            [[false]],
+            [[z, NEGATIVE_ROOTS[i]]],
+            [[false, false]],
+            [ROOTS[i]],
+            [true]
+        );
+        BigNum::evaluate_quadratic_expression(
+            [[inv_denom]],
+            [[false]],
+            [[z, NEGATIVE_ROOTS[i]]],
+            [[false, false]],
+            [one],
+            [true]
+        );
 
         fracs[i] = frac;
         std::as_witness(fracs[i].limbs[0]);
@@ -332,7 +378,23 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
             std::as_witness(rhs[j].limbs[2]);
 
             let summand = ys[k].__mulmod(fracs[k]);
-            partial_sum = partial_sum.__addmod(summand);
+            let partial_sum_out = partial_sum.__addmod(summand);
+
+            std::as_witness(partial_sum_out.limbs[0]);
+            std::as_witness(partial_sum_out.limbs[1]);
+            std::as_witness(partial_sum_out.limbs[2]);
+
+            // Preferably replace this with the chunky commented-out call immediately below (outside this loop), because it'd be more efficient.
+            BigNum::evaluate_quadratic_expression(
+                [[fracs[k]]],
+                [[false]],
+                [[ys[k]]],
+                [[false]],
+                [partial_sum, partial_sum_out],
+                [false, true]
+            );
+
+            partial_sum = partial_sum_out;
 
             std::as_witness(partial_sum.limbs[0]);
             std::as_witness(partial_sum.limbs[1]);
@@ -340,14 +402,24 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
         }
         let mut sum_out = sum.__addmod(partial_sum);
 
-        // BigNum::evaluate_quadratic_expression(
-        //     [lhs],
-        //     [[false; 8]],
-        //     [rhs],
-        //     [[false; 8]],
-        //     [sum, sum_out],
-        //     [false, true]
-        // );
+        BigNum::evaluate_quadratic_expression(
+            [[]],
+            [[]],
+            [[]],
+            [[]],
+            [partial_sum, sum, sum_out],
+            [false, false, true]
+        );
+
+        //  // BigNum::evaluate_quadratic_expression(
+        //  //     [lhs],
+        //  //     [[false; 8]],
+        //  //     [rhs],
+        //  //     [[false; 8]],
+        //  //     [sum, sum_out],
+        //  //     [false, true]
+        //  // );
+
         sum = sum_out;
 
         std::as_witness(sum.limbs[0]);
@@ -370,7 +442,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
     let y = factor.__mulmod(sum);
 
-    // BigNum::evaluate_quadratic_expression([[factor]], [[false]], [[sum]], [[false]], [y], [true]);
+    BigNum::evaluate_quadratic_expression([[factor]], [[false]], [[sum]], [[false]], [y], [true]);
 
     println(y);
 
@@ -402,8 +474,6 @@ fn test_barycentric() {
         ];
         // Also computed with cKzg, in the typescript tests:
         // 0x049a902c5b4968d755b6f49c0231e15af80c62e352a428e8e9842eadc1c106bd
-        // Here's the incorrect value it's giving, when tested:
-        // BigNum { limbs: [0x63171a952147474c21756e0e0835e8, 0x8162da4b46baadb7a4e0118f0ad7c0, 0x24d4] }
     }
     if (FIELDS_PER_BLOB == 8) {
         // Computed with the eth consensus specs py lib (after hacking it to cope with blobs of size 8 instead of 4096):
@@ -416,6 +486,7 @@ fn test_barycentric() {
     assert(y.limbs == expected_y);
 }
 
+// Helper function used to populate the hard-coded double_modulus value in the bls12381Fr.nr file in the bignum library.
 unconstrained fn compute_double_modulus() -> [Field; 3] {
     let two_p = [0x7b4805fffcb7fdfffffffe00000002, 0x4ea6533afa906673b0101343b00aa7, 0x00e7db];
     let NUM_LIMBS = 3; // must be >= 3
