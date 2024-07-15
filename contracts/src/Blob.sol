@@ -2,33 +2,25 @@
 pragma solidity >=0.8.26;
 
 contract Blob {
-    uint256 txId;
-    mapping(uint256 txId => mapping(uint256 blobIndex => bytes32 blobHash)) blobHashes;
     uint256 internal constant BLS_MODULUS =
         52435875175126190479447740508185965837690552500527637822603658699938581184513;
     uint256 internal constant FIELD_ELEMENTS_PER_BLOB = 4096;
 
-    event Hello(uint256 _b);
+    uint256 txId;
+    mapping(uint256 txId => mapping(uint256 blobIndex => bytes32 blobHash)) blobHashes;
+
     event BlobHash(uint256 _txId, bytes32 _blobhash);
     event PointEvaluationSuccess(bool _success);
-
-    function hello(uint256 a) external {
-        emit Hello(2 * a);
-    }
-
-    function helloAgain() external {
-        emit Hello(2 * txId);
-    }
 
     /**
      * You don't actually need to call a function to submit a blob; the tx payload
      * can be empty. I'm calling this function so that the blob's versioned_hash
-     * (aka blobhash) can be accessed and stored for later. It seems you can only
+     * (aka blobhash) can be accessed and stored for later. You can only
      * access the blobhash in the tx in which the blob was submitted.
      */
     function submitBlobs() external {
         /**
-         * blobhash() eturns the versioned_hash of the i-th blob associated with _this_ transaction.
+         * blobhash(i) returns the versioned_hash of the i-th blob associated with _this_ transaction.
          * bytes[0:1]: 0x01
          * bytes[1:32]: the last 31 bytes of the sha256 hash of the kzg commitment C.
          */

@@ -42,7 +42,7 @@ unconstrained fn __batch_invert_impl<let N: u64>(mut x: [F; N]) -> [F; N] {
     x
 }
 
-// Not used because it resulted in "stack too deep":
+// Not used because it resulted in "stack too deep", so it's inlined instead.
 // unconstrained fn __compute_inv_denoms(z: F) -> [F; FIELDS_PER_BLOB] {
 //     let mut denoms: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
 //     for i in 0..FIELDS_PER_BLOB {
@@ -233,7 +233,11 @@ fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F
  * Precompute:
  * - The d roots of unity ω^i (plus maybe their negatives for z - ω^i computations).
  * - (1 / d)
- *                   
+ * 
+ * @param z
+ * @param ys - the many y_i's of the blob.
+ *
+ * @return y = p(z)                  
  */
 fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     // z ^ D:

@@ -1,4 +1,3 @@
-import { executeCurlCommandFromFile } from "./utils/curl.js";
 import {
   parseGwei,
   bytesToHex,
@@ -22,30 +21,12 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-test("Test submission", async () => {
-  //***********************************************/
+let abi: Abi;
+let bytecode: Hex;
+let deployedContractAddress: `0x${string}`;
 
-  // A simple transfer of eth works:
-
-  const transferRequest = await client.prepareTransactionRequest({
-    to: "0x0000000000000000000000000000000000000000",
-    value: 1000000000000000000n,
-  });
-  const serializedTransaction = await client.signTransaction(transferRequest);
-  const transferHash = await client.sendRawTransaction({
-    serializedTransaction,
-  });
-
-  //***********************************************/
-
-  // Now send a blob tx:
-  // For a while it was only working with pure curl, until I figured out how to feed viem's typed-but-not-really functions correctly.
-  const url = "127.0.0.1:8545";
-  const rawBlobTxFilePath = "./src/raw-tx.json";
-  const response = await executeCurlCommandFromFile(rawBlobTxFilePath, url);
-});
-
-test.only("Test deploy", async () => {
+// Deploy the blob submission contract (Blob.sol):
+async function deployBlobSubmissionContract() {
   const artifactPath = path.join(
     __dirname,
     "..",
@@ -62,8 +43,8 @@ test.only("Test deploy", async () => {
     console.error("Error reading JSON file:", error);
   }
 
-  const abi = data.abi as Abi;
-  const bytecode: Hex = data.bytecode.object;
+  abi = data.abi as Abi;
+  bytecode = data.bytecode.object;
 
   const myAddress = (await client.getAddresses())[0];
 
@@ -78,92 +59,19 @@ test.only("Test deploy", async () => {
       address: myAddress,
     })) - 1
   );
-  const deployedContractAddress = getContractAddress({
+  deployedContractAddress = getContractAddress({
     from: myAddress,
     nonce,
   });
+}
 
-  //*************************************** */
+let blob: Uint8Array;
+let versionedHash: Uint8Array;
+let inputBytes: Buffer;
+let input: `0x${string}`;
 
-  const { request: helloRequest } = await client.simulateContract({
-    address: deployedContractAddress,
-    abi,
-    functionName: "hello",
-    args: [5],
-    account,
-  });
-  const helloHash = await client.writeContract(helloRequest);
-
-  const helloReceipt = await client.getTransactionReceipt({
-    hash: helloHash,
-  });
-
-  const helloLogs = parseEventLogs({
-    abi,
-    logs: helloReceipt.logs,
-  });
-
-  // Ok, so I know how to use viem a little bit now.
-
-  //*************************************** */
-
-  const { request: helloAgainRequest } = await client.simulateContract({
-    address: deployedContractAddress,
-    abi,
-    functionName: "helloAgain",
-    args: [],
-    account,
-  });
-
-  const helloAgainHash = await client.writeContract(helloAgainRequest);
-
-  const helloAgainReceipt = await client.getTransactionReceipt({
-    hash: helloAgainHash,
-  });
-
-  const helloAgainLogs = parseEventLogs({
-    abi,
-    logs: helloAgainReceipt.logs,
-  });
-
-  //*************************************** */
-
-  // This is about as type-safe as a banana. This code snippet created a contract!
-
-  const rawHelloFunctionData = encodeFunctionData({
-    abi,
-    functionName: "hello",
-    args: [6],
-  });
-
-  const rawHelloRequest = await client.prepareTransactionRequest({
-    to: deployedContractAddress,
-    data: rawHelloFunctionData,
-    maxPriorityFeePerGas: 1_000_000_000n,
-    maxFeePerGas: 2_051_413_230n,
-    gas: 10_000_000n,
-  });
-
-  const rawHelloSerializedTransaction = await client.signTransaction(
-    rawHelloRequest
-  );
-
-  const rawHelloHash = await client.sendRawTransaction({
-    serializedTransaction: rawHelloSerializedTransaction,
-  });
-
-  const rawHelloReceipt = await client.getTransactionReceipt({
-    hash: rawHelloHash,
-  });
-
-  const rawHelloLogs = parseEventLogs({
-    abi,
-    logs: rawHelloReceipt.logs,
-  });
-
-  //*************************************** */
-
-  // Now let's try sending a blob!!!!
+function createBlobData() {
+  // Construct a blob:
 
   // Let's design the blob so that we know some of the evaluations of p(X), so that we can validate this is all working correctly.
 
@@ -209,44 +117,54 @@ test.only("Test deploy", async () => {
    * proof0 = commitment to q0(X) = (p(X) - p(z0)) / (X - z0)
    * proof1 = commitment to q1(X) = (p(X) - p(z1)) / (X - z1)
    */
-  let blob: Uint8Array = Buffer.alloc(BYTES_PER_BLOB);
+  blob = Buffer.alloc(BYTES_PER_BLOB);
   (blob as Buffer).write("1234", 32 - 2, 2, "hex");
   (blob as Buffer).write("abcd", 2 * 32 - 2, 2, "hex"); // each value is offset by a 32-byte 'Field' (as per the definition of "Field" in the eip-4844 spec).
   (blob as Buffer).write("69", 3 * 32 - 1, 1, "hex");
 
-  // These are the 0th and 1th roots of unity, taken from the eth consensus specs python lib.
-  let z0 = Buffer.alloc(32);
-  (z0 as Buffer).write("01", 31, "hex");
-  let z1 = Buffer.alloc(32);
-  (z1 as Buffer).write(
-    "73EDA753299D7D483339D80809A1D80553BDA402FFFE5BFEFFFFFFFF00000000",
-    0,
-    "hex"
-  );
+  const commitment = kzg.blobToKzgCommitment(blob);
+
+  {
+    // These are the 0th and 1th roots of unity, taken from the eth consensus specs python lib.
+    let z0 = Buffer.alloc(32);
+    (z0 as Buffer).write("01", 31, "hex");
+    let z1 = Buffer.alloc(32);
+    (z1 as Buffer).write(
+      "73EDA753299D7D483339D80809A1D80553BDA402FFFE5BFEFFFFFFFF00000000",
+      0,
+      "hex"
+    );
+
+    // Notice: we have to move away from viem's restricted kzg methods and access the underlying
+    // cKzg methods, to compute a point at a z value that we can specify.
+    const [proof0, y0] = cKzg.computeKzgProof(blob, z0);
+    expect(bytesToHex(y0)).toBe(bytesToHex(blob.slice(0, 32)));
+
+    const [proof1, y1] = cKzg.computeKzgProof(blob, z1);
+    expect(bytesToHex(y1)).toBe(bytesToHex(blob.slice(32, 64)));
+  }
 
   let z = Buffer.alloc(32);
   (z as Buffer).write("02", 31, "hex");
-
-  const commitment = kzg.blobToKzgCommitment(blob);
-
-  // Notice: we have to move away from viem's restricted kzg methods and access the underlying
-  // cKzg methods, to compute a point at a z value that we can specify.
-  const [proof0, y0] = cKzg.computeKzgProof(blob, z0);
-  expect(bytesToHex(y0)).toBe(bytesToHex(blob.slice(0, 32)));
-
-  const [proof1, y1] = cKzg.computeKzgProof(blob, z1);
-  expect(bytesToHex(y1)).toBe(bytesToHex(blob.slice(32, 64)));
-
   const [proof, y] = cKzg.computeKzgProof(blob, z);
-  console.log("y for testing:", bytesToHex(y));
+  expect(bytesToHex(y)).toBe(
+    "0x049a902c5b4968d755b6f49c0231e15af80c62e352a428e8e9842eadc1c106bd"
+  );
 
-  const versionedHash = commitmentToVersionedHash({ commitment });
+  versionedHash = commitmentToVersionedHash({ commitment });
 
-  const inputBytes = Buffer.concat([versionedHash, z0, y0, commitment, proof0]);
+  inputBytes = Buffer.concat([versionedHash, z, y, commitment, proof]);
   expect(inputBytes.length).toBe(192);
 
-  const input = bytesToHex(inputBytes);
+  input = bytesToHex(inputBytes);
+}
 
+beforeAll(async () => {
+  await deployBlobSubmissionContract();
+  createBlobData();
+});
+
+test("Test basic blob submission to nowhere", async () => {
   // First send just a blob to no particular contract or function:
 
   const basicBlobRequest = await client.prepareTransactionRequest({
@@ -264,14 +182,14 @@ test.only("Test deploy", async () => {
   );
 
   // A Hardhat Network Node can only cope with blob transactions which are sent as raw transactions.
-  // An Anvil node seemingly can't cope with blob transactions at all.
+  // An Anvil node seemingly can't cope with blob transactions.
   // So let's send it as a raw transaction for the hardhat node's benefit.
   const basicBlobHash = await client.sendRawTransaction({
     serializedTransaction: basicBlobSerializedTransaction,
   });
+});
 
-  //*************************************** */
-
+test("Test blob submission", async () => {
   // Now the actual tx I want: sending a blob AND calling a particular function.
 
   const submitBlobsFunctionData = encodeFunctionData({
@@ -285,7 +203,7 @@ test.only("Test deploy", async () => {
     maxFeePerBlobGas: parseGwei("30"),
     to: deployedContractAddress,
     data: submitBlobsFunctionData,
-    // Interestingly, specifying these gas amounts enables hardhat to cope with this. Otherwise it makes an estimateGas call, and when it makes that call, it doesn't do a `send RAW Transaction` so that breaks the hardhat node (it can't deal with non-raw blobby txs https://github.com/NomicFoundation/hardhat/issues/5182).
+    // Interestingly, specifying these gas amounts enables hardhat to cope with this. Otherwise it makes an estimateGas call, and when it makes that call, it doesn't do a `send RAW Transaction` (it does a normal `sendTransaction`, so that breaks the hardhat node (it can't deal with non-raw blobby txs https://github.com/NomicFoundation/hardhat/issues/5182).
     maxPriorityFeePerGas: 1_000_000_000n,
     maxFeePerGas: 2_051_413_230n,
     gas: 10_000_000n,
@@ -296,7 +214,7 @@ test.only("Test deploy", async () => {
   );
 
   // A Hardhat Network Node can only cope with blob transactions which are sent as raw transactions.
-  // An Anvil node seemingly can't cope with blob transactions at all.
+  // An Anvil node seemingly can't cope with blob transactions.
   // So let's send it as a raw transaction for the hardhat node's benefit.
   const submitBlobsHash = await client.sendRawTransaction({
     serializedTransaction,
@@ -319,7 +237,7 @@ test.only("Test deploy", async () => {
 
   //*************************************** */
 
-  // Now let's verify proof0 on-chain:
+  // Now let's verify the kzg proof on-chain:
 
   const verifyKzgProofFunctionData = encodeFunctionData({
     abi,
@@ -357,7 +275,7 @@ test.only("Test deploy", async () => {
 
   //*************************************** */
 
-  // Now let's verify proof0 on-chain:
+  // Now let's validate than an invalid input to `verifyKzgProof` will fail:
 
   let badInputBytes = inputBytes;
   badInputBytes.write("00", 100, "hex");
