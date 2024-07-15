@@ -2,7 +2,21 @@
 
 ## Typescript & Solidity stuff:
 
-Ignore, if thinking about circuits:
+Ignore, if thinking about circuits.
+
+> [!IMPORTANT]  
+> To reproduce the issue relating to not being able to submit blobs to an Anvil node:
+> Happy path:
+>
+> Clone the repo.
+>
+> `cd blob-lib`
+>
+> `./bootstrap.sh`
+>
+> `yarn test:anvil`
+>
+> If that doesn't work, please interrogate the commands below and the bootstrap.sh script.
 
 ### Build
 
