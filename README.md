@@ -1,5 +1,10 @@
 # blob-lib
 
+TODO:
+- Wait for Anvil blob submission bug fix (because currently this only works with a Hardhat node): https://github.com/foundry-rs/foundry/issues/8447
+- Pray for brillig speedup, otherwise write custom oracles to compute bignum operations in typsecript, then feed-in the witnesses, because 30 min runtimes aren't practical for the Noir circuit.
+- JS code to call the noir circuit, with tightly-packed example blob data.
+
 ## Typescript & Solidity stuff:
 
 Ignore, if thinking about circuits.
