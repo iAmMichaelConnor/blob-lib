@@ -6,26 +6,26 @@ mod negative_roots;
 // ONLY CHOOSE ONE OF THESE IMPORTS:
 use crate::{
     config::{
-    BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
+    BigNum, BLS12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
 },
     negative_roots::NEGATIVE_ROOTS
 };
 // use crate::smaller_config::{
-//     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
+//     BigNum, BLS12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
 //     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
 // };
 
 use std::hash::poseidon2;
 
-unconstrained fn __batch_invert_impl<let N: u64>(mut x: [F; N]) -> [F; N] {
+unconstrained fn __batch_invert_impl<let N: u32>(mut x: [F; N]) -> [F; N] {
     let mut accumulator: F = BigNum::one();
 
     let mut temporaries: [F] = &[];
     for i in 0..x.len() {
         temporaries = temporaries.push_back(accumulator);
         if (x[i].__is_zero() == false) {
-            accumulator = accumulator.__mulmod(x[i]);
+            accumulator = accumulator.__mul(x[i]);
         }
     }
 
@@ -34,8 +34,8 @@ unconstrained fn __batch_invert_impl<let N: u64>(mut x: [F; N]) -> [F; N] {
     for i in 0..x.len() {
         let idx = x.len() - 1 - i;
         if (x[idx].__is_zero() == false) {
-            T0 = accumulator.__mulmod(temporaries[idx]);
-            accumulator = accumulator.__mulmod(x[idx]);
+            T0 = accumulator.__mul(temporaries[idx]);
+            accumulator = accumulator.__mul(x[idx]);
             x[idx] = T0;
         }
     }
@@ -46,7 +46,7 @@ unconstrained fn __batch_invert_impl<let N: u64>(mut x: [F; N]) -> [F; N] {
 // unconstrained fn __compute_inv_denoms(z: F) -> [F; FIELDS_PER_BLOB] {
 //     let mut denoms: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
 //     for i in 0..FIELDS_PER_BLOB {
-//         denoms[i] = z.__submod(ROOTS[i]);
+//         denoms[i] = z.__sub(ROOTS[i]);
 //     }
 //     __batch_invert_impl(denoms)
 // }
@@ -203,19 +203,55 @@ fn compute_challenge(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> 
 // we haven't implemented Fq; only Fr, and we don't actually need to operate on it; 
 // we just need the bits of data. So we've simply encoded it as fitting inside a 
 // [Field; 2], since two 254-bit fields more-than covers 381+1=382 bits.
-fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F, [Field; 2]) {
-    let challenge_z: Field = compute_challenge(blob, kzg_commitment);
-    let challenge_z_as_bignum: F = field_to_bignum(challenge_z);
+// fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F, [Field; 2]) {
+//     let challenge_z: Field = compute_challenge(blob, kzg_commitment);
+//     let challenge_z_as_bignum: F = field_to_bignum(challenge_z);
 
-    let y = barycentric_evaluate_blob_at_z(challenge_z_as_bignum, blob);
+//     let y = barycentric_evaluate_blob_at_z(challenge_z_as_bignum, blob);
 
-    // let challenge_z_as_bytes: [u8] = challenge_z.to_be_bytes(32);
-    // let y_as_bytes: [u8] = bignum_to_bytes(y);
-    // let kzg_commitment_as_bytes: [u8] = ()
+//     // let challenge_z_as_bytes: [u8] = challenge_z.to_be_bytes(32);
+//     // let y_as_bytes: [u8] = bignum_to_bytes(y);
+//     // let kzg_commitment_as_bytes: [u8] = ()
 
-    // TODO: this return data needs to be TIGHTLY PACKED into bytes.
-    // TODO: then those bytes need to be sha256-hashed, to produce a single value that can be sent to ethereum for cheap snark verification. On ethereum, the bytes will be sent along with the sha256-hash of the bytes. The bytes will be used in the point evaluation precompile. The sha256-hash will form a part of the public inputs of the zk-snark proof.
-    (challenge_z, y, kzg_commitment)
+//     // TODO: this return data needs to be TIGHTLY PACKED into bytes.
+//     // TODO: then those bytes need to be sha256-hashed, to produce a single value that can be sent to ethereum for cheap snark verification. On ethereum, the bytes will be sent along with the sha256-hash of the bytes. The bytes will be used in the point evaluation precompile. The sha256-hash will form a part of the public inputs of the zk-snark proof.
+//     (challenge_z, y, kzg_commitment)
+// }
+
+// main used to test `nargo execute`
+fn main(ys_limbs: [[Field; 3]; FIELDS_PER_BLOB], z_limbs: [Field; 3]) {
+    let z: F = BigNum { limbs: z_limbs };
+
+    // many y's form a blob:
+    let mut ys: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
+
+    ys[0] = BigNum { limbs: ys_limbs[0] };
+    ys[1] = BigNum { limbs: ys_limbs[1] };
+    ys[2] = BigNum { limbs: ys_limbs[2] };
+
+    // evaluate the blob at z = 2 to yield y:
+    let y = barycentric_evaluate_blob_at_z(z, ys);
+
+    let mut expected_y: [Field; 3] = [0; 3];
+    if (FIELDS_PER_BLOB == 4096) {
+        // Computed with the eth consensus specs py lib
+        expected_y = [
+            0x0c62e352a428e8e9842eadc1c106bd, 
+            0x902c5b4968d755b6f49c0231e15af8,
+            0x00049a
+        ];
+        // Also computed with cKzg, in the typescript tests:
+        // 0x049a902c5b4968d755b6f49c0231e15af80c62e352a428e8e9842eadc1c106bd
+    }
+    if (FIELDS_PER_BLOB == 8) {
+        // Computed with the eth consensus specs py lib (after hacking it to cope with blobs of size 8 instead of 4096):
+        expected_y = [
+            0xb04cdea4304000053abffffffb203a, 
+            0x0000000002e30785c8afa4496f8e38,
+            0x000000
+        ];
+    }
+    assert(y.limbs == expected_y);
 }
 
 /**
@@ -242,13 +278,13 @@ fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F
 fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     // z ^ D:
 
-    let mut t1 = z.__mulmod(z);
+    let mut t1 = z.__mul(z);
 
     BigNum::evaluate_quadratic_expression([[z]], [[false]], [[z]], [[false]], [t1], [true]);
 
     let mut t2: F = BigNum::new();
     for _i in 0..LOG_FIELDS_PER_BLOB - 1 {
-        t2 = t1.__mulmod(t1);
+        t2 = t1.__mul(t1);
 
         // GRATUITOUS USAGE OF as_witness, LIKE THROWING DARTS AT A DARTBOARD AND HOPING THIS HELPS
         std::as_witness(t2.limbs[0]);
@@ -269,12 +305,12 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
     let one: F = BigNum::one();
 
-    t1 = z_pow_d.__submod(one);
+    t1 = z_pow_d.__sub(one);
     std::as_witness(t1.limbs[0]);
     std::as_witness(t1.limbs[1]);
     std::as_witness(t1.limbs[2]);
 
-    let factor = t1.__mulmod(D_INV);
+    let factor = t1.__mul(D_INV);
 
     // (z_pow_d - one) * (D_INV) - factor = 0
     // z_pow_d * D_INV - D_INV - factor = 0
@@ -307,7 +343,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
     let mut denoms = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
-        denoms[i] = z.__addmod(NEGATIVE_ROOTS[i]);
+        denoms[i] = z.__add(NEGATIVE_ROOTS[i]);
     }
     let inv_denoms = __batch_invert_impl(denoms);
 
@@ -316,7 +352,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
         let num = root_i;
         let inv_denom = inv_denoms[i];
 
-        let frac = num.__mulmod(inv_denom);
+        let frac = num.__mul(inv_denom);
 
         // roots[i] / (z + neg_roots[i]) = frac 
         // && (z + neg_roots[i]) * inv_denom = 1.
@@ -385,8 +421,8 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
             std::as_witness(rhs[j].limbs[1]);
             std::as_witness(rhs[j].limbs[2]);
 
-            let summand = ys[k].__mulmod(fracs[k]);
-            let partial_sum_out = partial_sum.__addmod(summand);
+            let summand = ys[k].__mul(fracs[k]);
+            let partial_sum_out = partial_sum.__add(summand);
 
             std::as_witness(partial_sum_out.limbs[0]);
             std::as_witness(partial_sum_out.limbs[1]);
@@ -408,13 +444,13 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
             std::as_witness(partial_sum.limbs[1]);
             std::as_witness(partial_sum.limbs[2]);
         }
-        let mut sum_out = sum.__addmod(partial_sum);
+        let mut sum_out = sum.__add(partial_sum);
 
         BigNum::evaluate_quadratic_expression(
-            [[]],
-            [[]],
-            [[]],
-            [[]],
+            [[BigNum::new(), BigNum::new(), BigNum::new()]],
+            [[false, false, false]],
+            [[BigNum::new(), BigNum::new(), BigNum::new()]],
+            [[false, false, false]],
             [partial_sum, sum, sum_out],
             [false, false, true]
         );
@@ -448,7 +484,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
     // y:
 
-    let y = factor.__mulmod(sum);
+    let y = factor.__mul(sum);
 
     BigNum::evaluate_quadratic_expression([[factor]], [[false]], [[sum]], [[false]], [y], [true]);
 
