@@ -6,7 +6,7 @@ mod smaller_config;
 // ONLY CHOOSE ONE OF THESE IMPORTS:
 // use crate::{
 //     config::{
-//     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
+//     BigNum, BLS12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
 //     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
 // },
 //     negative_roots::NEGATIVE_ROOTS

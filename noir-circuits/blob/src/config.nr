@@ -1,6 +1,6 @@
-use dep::bigint::{BigNum, fields::bls12381Fr::Bls12_381_Fr_Params};
+use dep::bigint::{BigNum, fields::bls12_381Fr::BLS12_381_Fr_Params};
 
-type F = BigNum<3, Bls12_381_Fr_Params>;
+type F = BigNum<3, BLS12_381_Fr_Params>;
 
 global FIELDS_PER_BLOB: u64 = 4096;
 global LOG_FIELDS_PER_BLOB: u64 = 12;
