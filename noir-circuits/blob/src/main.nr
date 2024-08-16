@@ -1,22 +1,38 @@
 // ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
-// mod config;
-// mod negative_roots;
+
+//*********************************************************************************
+
+// SMALL CONFIG
+
 mod smaller_config;
 
-// ONLY CHOOSE ONE OF THESE IMPORTS:
-// use crate::{
-//     config::{
-//     BigNum, Bls12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
-//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
-// },
-//     negative_roots::NEGATIVE_ROOTS
-// };
 use crate::smaller_config::{
     BigNum, BLS12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
 };
 
+//*********************************************************************************
+
+//*********************************************************************************
+
+// BIG CONFIG
+
+// mod config;
+// mod negative_roots;
+
+// use crate::{
+//     config::{
+//     BigNum, BLS12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
+//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
+// },
+//     negative_roots::NEGATIVE_ROOTS
+// };
+
+//*********************************************************************************
+
 use std::hash::poseidon2;
+
+global LIMB_MAX = 2.pow_32(120);
 
 unconstrained fn __batch_invert_impl<let N: u32>(mut x: [F; N]) -> [F; N] {
     let mut accumulator: F = BigNum::one();
@@ -75,9 +91,8 @@ fn field_to_bignum(x: Field) -> F {
     let __x_limbs = __field_to_bignum_limbs(x);
 
     let mut check = __x_limbs[3 - 1];
-    let limb_max = 2.pow_32(120);
     for i in 1..3 {
-        check *= limb_max;
+        check *= LIMB_MAX;
         check += __x_limbs[3 - i - 1];
     }
     assert(check == x);
@@ -91,10 +106,9 @@ fn field_to_bignum(x: Field) -> F {
 // Or actually, maybe it's not unsafe, if Field catches overflows?
 fn unsafe_bignum_to_field(x: F) -> Field {
     let mut result: Field = 0;
-    let limb_max = 2.pow_32(120);
     result += x.limbs[3 - 1];
     for i in 1..3 {
-        result *= limb_max;
+        result *= LIMB_MAX;
         result += x.limbs[3 - i - 1];
     }
     result
@@ -193,6 +207,7 @@ fn hash_kzg_commitment(kzg_commitment: [Field; 2]) -> Field {
 fn compute_challenge(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> Field {
     let kzg_commitment_hash = hash_kzg_commitment(kzg_commitment);
     let blob_hash = hash_blob(blob);
+    // let blob_hash = 1;
     let challenge = poseidon2::Poseidon2::hash([blob_hash, kzg_commitment_hash], 2);
     challenge
 }
@@ -207,7 +222,8 @@ fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F
     let challenge_z: Field = compute_challenge(blob, kzg_commitment);
     let challenge_z_as_bignum: F = field_to_bignum(challenge_z);
 
-    let y = barycentric_evaluate_blob_at_z(challenge_z_as_bignum, blob);
+    let y: F = barycentric_evaluate_blob_at_z(challenge_z_as_bignum, blob);
+    // let y = challenge_z_as_bignum; // dummy constraint for when we want to skip the barycentric stuff in testing.
 
     // let challenge_z_as_bytes: [u8] = challenge_z.to_be_bytes(32);
     // let y_as_bytes: [u8] = bignum_to_bytes(y);
@@ -287,15 +303,15 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
         [true, true]
     );
 
-    //  // This version doesn't work:
-    //  // BigNum::evaluate_quadratic_expression(
-    //  //     [[z_pow_d, one]],
-    //  //     [[false, true]],
-    //  //     [[D_INV]],
-    //  //     [[false]],
-    //  //     [factor],
-    //  //     [true]
-    //  // );
+    // This version doesn't work:
+    // BigNum::evaluate_quadratic_expression(
+    //     [[z_pow_d, one]],
+    //     [[false, true]],
+    //     [[D_INV]],
+    //     [[false]],
+    //     [factor],
+    //     [true]
+    // );
 
     // sum:
 
@@ -307,35 +323,44 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
     let mut denoms = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
-        denoms[i] = z.__add(NEGATIVE_ROOTS[i]);
+        denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - ω^i)
     }
-    let inv_denoms = __batch_invert_impl(denoms);
+    let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - ω^i), for all i
 
     for i in 0..FIELDS_PER_BLOB {
-        let root_i = ROOTS[i];
-        let num = root_i;
-        let inv_denom = inv_denoms[i];
+        let root_i = ROOTS[i]; // ω^i
+        let num = root_i; // ω^i
+        let inv_denom = inv_denoms[i]; // 1 / (z - ω^i)
 
-        let frac = num.__mul(inv_denom);
+        let frac = num.__mul(inv_denom); // ω^i / (z - ω^i)
 
-        // roots[i] / (z + neg_roots[i]) = frac 
+        // We want:
+        //    roots[i] / (z + neg_roots[i]) = frac 
         // && (z + neg_roots[i]) * inv_denom = 1.
         //
+        // As two separate constraints:
         // frac * (z + neg_roots[i]) - roots[i] = 0
         // inv_denom * (z + neg_roots[i]) - 1 = 0
-        //
+        // 
+        // As one constraint:
+        // Can we safely combine those above two equations into one like this?
+        // Maybe not, because it gives us room to tweak frac & inv_denom in infinite ways
+        // to still yield the same sum, so as to still pass this constraint,
+        // whereas they'd fail the separate two constraints.
+        // In other words, the two separate constraints imply this single constraint,
+        // but this single constraint doesn't necessarily imply the two separate constraints.
         // (frac + inv_denom) * (z + neg_roots[i]) - roots[i] - 1 = 0
-        //
-        // // BigNum::evaluate_quadratic_expression(
-        // //     [[frac, inv_denom]],
-        // //     [[false, false]],
-        // //     [[z, NEGATIVE_ROOTS[i]]],
-        // //     [[false, false]],
-        // //     [ROOTS[i], one],
-        // //     [true, true]
-        // // );
+        // BigNum::evaluate_quadratic_expression(
+        //     [[frac, inv_denom]],
+        //     [[false, false]],
+        //     [[z, NEGATIVE_ROOTS[i]]],
+        //     [[false, false]],
+        //     [ROOTS[i], one],
+        //     [true, true]
+        // );
 
         // Alternative:
+        // frac * (z + neg_roots[i]) - roots[i] = 0
         BigNum::evaluate_quadratic_expression(
             [[frac]],
             [[false]],
@@ -344,6 +369,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
             [ROOTS[i]],
             [true]
         );
+        // inv_denom * (z + neg_roots[i]) - 1 = 0
         BigNum::evaluate_quadratic_expression(
             [[inv_denom]],
             [[false]],
@@ -353,7 +379,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
             [true]
         );
 
-        fracs[i] = frac;
+        fracs[i] = frac; // ω^i / (z - ω^i)
         std::as_witness(fracs[i].limbs[0]);
         std::as_witness(fracs[i].limbs[1]);
         std::as_witness(fracs[i].limbs[2]);
@@ -369,15 +395,32 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     // which implies...we can accomodate up to EIGHT additions of product terms before we risk overflowing
     // (this is really messy! I never considered the case of giant linear sequences of products)
     let mut sum: F = BigNum::new();
+    /**
+     * Seeking:
+     *                    ___d-1 
+     *                    \            ω^i
+     *              sum = /   y_i . ---------
+     *                   /____       z - ω^i
+     *                    i=0
+     */
     for i in 0..SUM_SLICES {
         let mut partial_sum: F = BigNum::new();
         let mut lhs: [F; 8] = [BigNum::new(); 8];
         let mut rhs = lhs;
 
+        /**
+         * Seeking:
+         *                    ___i*8 + 7 
+         *                    \            ω^k
+         *      partial_sum = /   y_k . ---------
+         *                   /____       z - ω^k
+         *                    k=i*8 + 0
+         */
+
         for j in 0..8 {
             let k = i * 8 + j;
-            lhs[j] = ys[k];
-            rhs[j] = fracs[k];
+            lhs[j] = ys[k]; // y_k
+            rhs[j] = fracs[k]; // ω^k / (z - ω^k)
             std::as_witness(lhs[j].limbs[0]);
             std::as_witness(lhs[j].limbs[1]);
             std::as_witness(lhs[j].limbs[2]);
@@ -385,48 +428,54 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
             std::as_witness(rhs[j].limbs[1]);
             std::as_witness(rhs[j].limbs[2]);
 
+            // y_k * ( ω^k / (z - ω^k) )
             let summand = ys[k].__mul(fracs[k]);
-            let partial_sum_out = partial_sum.__add(summand);
 
-            std::as_witness(partial_sum_out.limbs[0]);
-            std::as_witness(partial_sum_out.limbs[1]);
-            std::as_witness(partial_sum_out.limbs[2]);
-
-            // Preferably replace this with the chunky commented-out call immediately below (outside this loop), because it'd be more efficient.
-            BigNum::evaluate_quadratic_expression(
-                [[fracs[k]]],
-                [[false]],
-                [[ys[k]]],
-                [[false]],
-                [partial_sum, partial_sum_out],
-                [false, true]
-            );
-
-            partial_sum = partial_sum_out;
+            // partial_sum + ( ys[k] * fracs[k] ) -> partial_sum
+            partial_sum = partial_sum.__add(summand);
 
             std::as_witness(partial_sum.limbs[0]);
             std::as_witness(partial_sum.limbs[1]);
             std::as_witness(partial_sum.limbs[2]);
         }
+
+        /**
+         * Seeking:
+         *                    ___i*8 - 1              ___i*8 + 7            
+         *                    \            ω^i        \            ω^k     
+         *      sum_out   =   /   y_i . ---------  +  /   y_k . ---------        
+         *                   /____       z - ω^i     /____       z - ω^k        
+         *                       0                    k = i*8                   
+         *                   ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^    
+         *                          sum                   partial_sum     
+         *
+         *
+         *                                               
+         *                    ___i*8 - 1              ___ 7          
+         *                    \            ω^i        \              
+         *      sum_out   =   /   y_i . ---------  +  /   lhs[j] . rhs[j]
+         *                   /____       z - ω^i     /____         
+         *                       0                    j = 0              
+         *                   ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^ 
+         *                          sum                   partial_sum     
+         */
+
         let mut sum_out = sum.__add(partial_sum);
 
-        BigNum::evaluate_quadratic_expression(
-            [[]],
-            [[]],
-            [[]],
-            [[]],
-            [partial_sum, sum, sum_out],
-            [false, false, true]
-        );
+        std::as_witness(sum_out.limbs[0]);
+        std::as_witness(sum_out.limbs[1]);
+        std::as_witness(sum_out.limbs[2]);
 
-        //  // BigNum::evaluate_quadratic_expression(
-        //  //     [lhs],
-        //  //     [[false; 8]],
-        //  //     [rhs],
-        //  //     [[false; 8]],
-        //  //     [sum, sum_out],
-        //  //     [false, true]
-        //  // );
+        //    sum_out <- sum + (lhs[0] * rhs[0] + ... + lhs[7] * rhs[7]) 
+        // => (lhs[0] * rhs[0] + ... + lhs[7] * rhs[7]) + sum - sum_out == 0
+        BigNum::evaluate_quadratic_expression(
+            [[lhs[0]], [lhs[1]], [lhs[2]], [lhs[3]], [lhs[4]], [lhs[5]], [lhs[6]], [lhs[7]]],
+            [[false], [false], [false], [false], [false], [false], [false], [false]],
+            [[rhs[0]], [rhs[1]], [rhs[2]], [rhs[3]], [rhs[4]], [rhs[5]], [rhs[6]], [rhs[7]]],
+            [[false], [false], [false], [false], [false], [false], [false], [false]],
+            [sum, sum_out],
+            [false, true]
+        );
 
         sum = sum_out;
 
@@ -435,21 +484,12 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
         std::as_witness(sum.limbs[2]);
     }
 
-    // I was hoping I could do this, which would be nice and efficient.
-    // This errors:
-    // // BigNum::evaluate_quadratic_expression(
-    // //     [ys],
-    // //     [[false; FIELDS_PER_BLOB]],
-    // //     [fracs],
-    // //     [[false; FIELDS_PER_BLOB]],
-    // //     [sum],
-    // //     [true]
-    // // );
-
     // y:
 
     let y = factor.__mul(sum);
 
+    //    y <- factor * sum
+    // => factor * sum - y == 0
     BigNum::evaluate_quadratic_expression([[factor]], [[false]], [[sum]], [[false]], [y], [true]);
 
     println(y);
@@ -457,7 +497,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     y
 }
 
-// nargo test --show-output test_main
+// nargo test --show-output test_barycentric
 #[test]
 fn test_barycentric() {
     let z: F = BigNum { limbs: [2, 0, 0] };

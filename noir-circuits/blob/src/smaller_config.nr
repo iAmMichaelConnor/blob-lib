@@ -7,7 +7,7 @@ global LOG_FIELDS_PER_BLOB: u64 = 3; // actually 12
 
 // The following three fields are more meaningful computation in the proper config.nr:
 global EXTRA_FIELDS_PER_BLOB: u64 = 0; // 0 = floor(8 FIELDS_PER_BLOB / 254 noir_field_bits). 
-global NOIR_FIELDS_PER_BLOB = 0; // FIELDS_PER_BLOB + EXTRA_FIELDS_PER_BLOB. It's a more meaningful computation in the proper config.nr.
+global NOIR_FIELDS_PER_BLOB = FIELDS_PER_BLOB + EXTRA_FIELDS_PER_BLOB; // It's a more meaningful computation in the proper config.nr.
 global FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB: u64 = 0; // EXTRA_FIELDS_PER_BLOB * 254 = 0. It's a more meaningful computation in the proper config.nr.
 
 global D: F = BigNum { limbs: [8, 0, 0] };
