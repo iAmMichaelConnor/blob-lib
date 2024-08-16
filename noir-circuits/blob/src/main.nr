@@ -1,32 +1,28 @@
 // ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
 
-//*********************************************************************************
+// SMALL CONFIG *********************************************************************************
 
-// SMALL CONFIG
+// mod smaller_config;
 
-mod smaller_config;
-
-use crate::smaller_config::{
-    BigNum, BLS12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
-    FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
-};
-
-//*********************************************************************************
-
-//*********************************************************************************
-
-// BIG CONFIG
-
-// mod config;
-// mod negative_roots;
-
-// use crate::{
-//     config::{
+// use crate::smaller_config::{
 //     BigNum, BLS12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
-//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
-// },
-//     negative_roots::NEGATIVE_ROOTS
+//     FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS, NEGATIVE_ROOTS
 // };
+
+//*********************************************************************************
+
+// BIG CONFIG *********************************************************************
+
+mod config;
+mod negative_roots;
+
+use crate::{
+    config::{
+    BigNum, BLS12_381_Fr_Params, F, FIELDS_PER_BLOB, LOG_FIELDS_PER_BLOB, NOIR_FIELDS_PER_BLOB,
+    FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB, D, D_INV, ROOTS
+},
+    negative_roots::NEGATIVE_ROOTS
+};
 
 //*********************************************************************************
 
@@ -59,13 +55,21 @@ unconstrained fn __batch_invert_impl<let N: u32>(mut x: [F; N]) -> [F; N] {
 }
 
 // Not used because it resulted in "stack too deep", so it's inlined instead.
-// unconstrained fn __compute_inv_denoms(z: F) -> [F; FIELDS_PER_BLOB] {
-//     let mut denoms: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
-//     for i in 0..FIELDS_PER_BLOB {
-//         denoms[i] = z.__sub(ROOTS[i]);
-//     }
-//     __batch_invert_impl(denoms)
-// }
+unconstrained fn __compute_fracs(z: F) -> [F; FIELDS_PER_BLOB] {
+    let mut denoms: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
+    for i in 0..FIELDS_PER_BLOB {
+        denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - ω^i)
+    }
+    let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - ω^i), for all i
+
+    let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
+    for i in 0..FIELDS_PER_BLOB {
+        let inv_denom = inv_denoms[i]; // 1 / (z - ω^i)
+
+        fracs[i] = ROOTS[i].__mul(inv_denom); // ω^i / (z - ω^i)
+    }
+    fracs
+}
 
 unconstrained fn __field_to_bytes(x: Field) -> [u8; 32] {
     let x_bytes_slice = x.to_be_bytes(32);
@@ -316,73 +320,46 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     // sum:
 
     let mut sum: F = BigNum::new();
-    let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
 
     // Making a call to this function causes a "stack too deep" error, so I've put the body of that function here, instead:
-    // let inv_denoms = __compute_inv_denoms(z);
+    // let fracs = __compute_fracs(z); // { ω^i / (z - ω^i) }
+
+    //*****************************************************************
+    // This section is only needed because `__compute_fracs` isn't working
+    let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
 
     let mut denoms = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
         denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - ω^i)
     }
+
+    // If you're seeing a `bug` warning for this line, I think it's fine. Ideally, we'd be using `__compute_fracs`, anyway.
     let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - ω^i), for all i
 
     for i in 0..FIELDS_PER_BLOB {
-        let root_i = ROOTS[i]; // ω^i
-        let num = root_i; // ω^i
+        let num = ROOTS[i]; // ω^i
         let inv_denom = inv_denoms[i]; // 1 / (z - ω^i)
 
         let frac = num.__mul(inv_denom); // ω^i / (z - ω^i)
 
-        // We want:
-        //    roots[i] / (z + neg_roots[i]) = frac 
-        // && (z + neg_roots[i]) * inv_denom = 1.
-        //
-        // As two separate constraints:
-        // frac * (z + neg_roots[i]) - roots[i] = 0
-        // inv_denom * (z + neg_roots[i]) - 1 = 0
-        // 
-        // As one constraint:
-        // Can we safely combine those above two equations into one like this?
-        // Maybe not, because it gives us room to tweak frac & inv_denom in infinite ways
-        // to still yield the same sum, so as to still pass this constraint,
-        // whereas they'd fail the separate two constraints.
-        // In other words, the two separate constraints imply this single constraint,
-        // but this single constraint doesn't necessarily imply the two separate constraints.
-        // (frac + inv_denom) * (z + neg_roots[i]) - roots[i] - 1 = 0
-        // BigNum::evaluate_quadratic_expression(
-        //     [[frac, inv_denom]],
-        //     [[false, false]],
-        //     [[z, NEGATIVE_ROOTS[i]]],
-        //     [[false, false]],
-        //     [ROOTS[i], one],
-        //     [true, true]
-        // );
+        fracs[i] = frac; // ω^i / (z - ω^i)
+        std::as_witness(fracs[i].limbs[0]);
+        std::as_witness(fracs[i].limbs[1]);
+        std::as_witness(fracs[i].limbs[2]);
 
-        // Alternative:
+        //End of section that is only needed because `__compute_fracs` isn't working
+        //*****************************************************************
+
+        // frac <-- roots[i] / (z + neg_roots[i])
         // frac * (z + neg_roots[i]) - roots[i] = 0
         BigNum::evaluate_quadratic_expression(
-            [[frac]],
+            [[fracs[i]]],
             [[false]],
             [[z, NEGATIVE_ROOTS[i]]],
             [[false, false]],
             [ROOTS[i]],
             [true]
         );
-        // inv_denom * (z + neg_roots[i]) - 1 = 0
-        BigNum::evaluate_quadratic_expression(
-            [[inv_denom]],
-            [[false]],
-            [[z, NEGATIVE_ROOTS[i]]],
-            [[false, false]],
-            [one],
-            [true]
-        );
-
-        fracs[i] = frac; // ω^i / (z - ω^i)
-        std::as_witness(fracs[i].limbs[0]);
-        std::as_witness(fracs[i].limbs[1]);
-        std::as_witness(fracs[i].limbs[2]);
     }
 
     let SUM_SLICES = FIELDS_PER_BLOB / 8;
