@@ -153,6 +153,15 @@ fn unsafe_blob_to_fields(blob: [F; FIELDS_PER_BLOB]) -> [Field; FIELDS_PER_BLOB]
     blob_as_fields
 }
 
+unconstrained fn __unsafe_extract_top_bit(x: F) -> (Field, Field) {
+    let top_limb: Field = x.limbs[2];
+    // The top_limb is at most 2 bytes (16 bits).
+    // 0x8000 = 2^15 = 32768
+    let top_bit: Field = (top_limb as u16 / 0x8000) as Field;
+    let top_limb_with_top_bit_removed = top_limb - top_bit * 0x8000;
+    (top_bit, top_limb_with_top_bit_removed)
+}
+
 // DANGER: it's named as "unsafe" because the caller MUST already have checked that 
 // each blob Field is formatted as (u1, Field). I.e. the "rhs" 254-bits should already
 // fit within a Field. If the "rhs" 254 bits is larger than the field modulus,
@@ -161,33 +170,41 @@ fn unsafe_blob_to_fields(blob: [F; FIELDS_PER_BLOB]) -> [Field; FIELDS_PER_BLOB]
 //
 // For efficiency, the top_bit is kept as a Field throughout.
 fn unsafe_extract_top_bit(x: F) -> (Field, F) {
-    let top_limb: Field = x.limbs[3];
-    // The top_limb is at most 2 bytes (16 bits).
-    let top_bit: Field = (top_limb as u16 / 0x8000) as Field;
-    let top_limb_with_top_bit_removed = top_limb - top_bit * 0x8000;
-    let x_with_top_bit_removed: F = BigNum { limbs: [x.limbs[0], x.limbs[1], top_limb_with_top_bit_removed] };
-    (top_bit, x_with_top_bit_removed)
+    let (top_bit, top_limb_with_top_bit_removed) = __unsafe_extract_top_bit(x);
+    assert_eq(top_bit * 0x8000 + top_limb_with_top_bit_removed, x.limbs[2]);
+
+    (top_bit, BigNum { limbs: [x.limbs[0], x.limbs[1], top_limb_with_top_bit_removed] })
 }
 
 fn blob_to_fields__tightly_packed(blob: [F; FIELDS_PER_BLOB]) -> [Field; NOIR_FIELDS_PER_BLOB] {
     let mut blob_as_fields: [Field; NOIR_FIELDS_PER_BLOB] = [0; NOIR_FIELDS_PER_BLOB];
     let mut top_bits: [Field; FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB] = [0; FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB];
+
+    // We start with [F; 4096].
+    // The first 4064 of these bls-fields have a 255th bit (counting from 1) which can contribute towards 
+    // new 254-bit noir fields. That is, we extract 4064 top-bits from the first 4064 of the 4096 bls-fields,
+    // and reconstitute them into 4064 / 254 = 16 extra noir fields.
+    // So we end up with 4096 + 16 = 4112 noir fields.
+
+    // Here we compute top_bits[0:4064] and blob_as_fields[0:4064].
     for i in 0..FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB {
         let (top_bit, field_with_top_bit_removed): (Field, F) = unsafe_extract_top_bit(blob[i]);
         top_bits[i] = top_bit;
         blob_as_fields[i] = unsafe_bignum_to_field(field_with_top_bit_removed);
     }
+    // Here we compute blob_as_fields[4064:4096].
     for i in FIELDS_CARRYING_AN_EXTRA_BIT_PER_BLOB..FIELDS_PER_BLOB {
         blob_as_fields[i] = unsafe_bignum_to_field(blob[i]);
     }
+    // Here we compute blob_as_fields[4096:4112] from top_bits[0:4064]
     for i in FIELDS_PER_BLOB..NOIR_FIELDS_PER_BLOB {
         // the top_bits are assumed to be big-endian bit arrays:
         let mut reconstituted_field = top_bits[0];
         for j in 1..254 {
-            let k = i * 254 + j;
+            let k = (i - FIELDS_PER_BLOB) * 254 + j;
             reconstituted_field *= 2;
             reconstituted_field += top_bits[k];
-            std::as_witness(reconstituted_field);
+            // std::as_witness(reconstituted_field); // this was costing 4048 gates
         }
         blob_as_fields[i] = reconstituted_field;
     }
@@ -325,7 +342,8 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     // let fracs = __compute_fracs(z); // { ω^i / (z - ω^i) }
 
     //*****************************************************************
-    // This section is only needed because `__compute_fracs` isn't working
+    // This section is only needed because `__compute_fracs` isn't working (stack too deep error).
+
     let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
 
     let mut denoms = [BigNum::new(); FIELDS_PER_BLOB];
@@ -333,7 +351,8 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
         denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - ω^i)
     }
 
-    // If you're seeing a `bug` warning for this line, I think it's fine. Ideally, we'd be using `__compute_fracs`, anyway.
+    // If you're seeing a `bug` warning for this line, I think it's fine.
+    // Ideally, we'd be using `__compute_fracs`, anyway, but we're getting a "stack too deep" error.
     let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - ω^i), for all i
 
     for i in 0..FIELDS_PER_BLOB {
@@ -515,7 +534,7 @@ fn test_barycentric() {
 unconstrained fn compute_double_modulus() -> [Field; 3] {
     let two_p = [0x7b4805fffcb7fdfffffffe00000002, 0x4ea6533afa906673b0101343b00aa7, 0x00e7db];
     let NUM_LIMBS = 3; // must be >= 3
-    let two_pow_120 = 2.pow_32(120); // 120 or 128?
+    let two_pow_120 = 2.pow_32(120);
     let mut double_modulus: [Field; 3] = [0; 3];
 
     double_modulus[0] = two_p[0] + two_pow_120;

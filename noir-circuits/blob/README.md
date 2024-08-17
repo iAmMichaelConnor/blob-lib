@@ -1,3 +1,9 @@
+## Constraint counts
+
+Current count: 428,240.
+
+113,776 is poseidon2-hashing the blob's fields. This _could_ be replaced by a databus commitment, if Noir could be given access to such a commitment. Although, that idea might not work, as it would require non-native EC Pairings on commitments to hone-in on only the part of the databus commitment which represents the blob.
+
 ## Compile:
 
 `time nargo compile `
