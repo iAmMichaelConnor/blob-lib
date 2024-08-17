@@ -1,4 +1,4 @@
-// ONLY IMPORT ONE OF THESE CONFIGS! The big `config` is too big to compile yet (I waited an hour and gave up).
+// ONLY IMPORT ONE OF THESE CONFIGS! The big `config` takes 11 mins to compile.
 
 // SMALL CONFIG *********************************************************************************
 
