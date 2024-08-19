@@ -343,7 +343,7 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
     /**
       *
-      * Note: it's more efficient (constraint-wise) to compute:
+      * Note: it's more efficient (saving 30k constraints) to compute:
       *    ___d-1                        
       *    \     /    y_i    \          
       *    /    |  ---------  | . ω^i   
