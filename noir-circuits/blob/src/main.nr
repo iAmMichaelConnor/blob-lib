@@ -55,7 +55,7 @@ unconstrained fn __batch_invert_impl<let N: u32>(mut x: [F; N]) -> [F; N] {
 }
 
 // Not used because it resulted in "stack too deep", so it's inlined instead.
-unconstrained fn __compute_fracs(z: F) -> [F; FIELDS_PER_BLOB] {
+unconstrained fn __compute_fracs(z: F, ys: [F; FIELDS_PER_BLOB]) -> [F; FIELDS_PER_BLOB] {
     let mut denoms: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
         denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - ω^i)
@@ -66,7 +66,7 @@ unconstrained fn __compute_fracs(z: F) -> [F; FIELDS_PER_BLOB] {
     for i in 0..FIELDS_PER_BLOB {
         let inv_denom = inv_denoms[i]; // 1 / (z - ω^i)
 
-        fracs[i] = ROOTS[i].__mul(inv_denom); // ω^i / (z - ω^i)
+        fracs[i] = ys[i].__mul(inv_denom); // y_i / (z - ω^i)
     }
     fracs
 }
@@ -256,11 +256,11 @@ fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F
 }
 
 /**
- *                    ___d-1 
- *         z^d - 1    \            ω^i
+ *                    ___d-1              
+ *         z^d - 1    \            ω^i    
  * p(z) = --------- . /   y_i . ---------
- *            d      /____       z - ω^i
- *                    i=0
+ *            d      /____       z - ω^i   
+ *                    i=0                 
  *
  * p(z) = factor . sum( y_i . num / denom )
  *
@@ -339,12 +339,35 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     let mut sum: F = BigNum::new();
 
     // Making a call to this function causes a "stack too deep" error, so I've put the body of that function here, instead:
-    // let fracs = __compute_fracs(z); // { ω^i / (z - ω^i) }
+    // let fracs = __compute_fracs(z, ys); // { y_i / (z - ω^i) }
+
+    /**
+      *
+      * Note: it's more efficient (constraint-wise) to compute:
+      *    ___d-1                        
+      *    \     /    y_i    \          
+      *    /    |  ---------  | . ω^i   
+      *   /____  \  z - ω^i  /         
+      *    i=0                        
+      *            ^^^^^^^^^
+      *              frac
+      *
+      * ... than to compute:
+      *
+      *    ___d-1             
+      *    \          /    ω^i    \
+      *    /   y_i . |  ---------  |
+      *   /____       \  z - ω^i  /
+      *    i=0                      
+      *     
+      * perhaps because all the ω^i terms are constant witnesses?
+      *
+      */
 
     //*****************************************************************
     // This section is only needed because `__compute_fracs` isn't working (stack too deep error).
 
-    let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
+    let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB]; // y_i / (z - ω^i), for all i
 
     let mut denoms = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
@@ -356,12 +379,12 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - ω^i), for all i
 
     for i in 0..FIELDS_PER_BLOB {
-        let num = ROOTS[i]; // ω^i
+        let num = ys[i];
         let inv_denom = inv_denoms[i]; // 1 / (z - ω^i)
 
-        let frac = num.__mul(inv_denom); // ω^i / (z - ω^i)
+        let frac = num.__mul(inv_denom); // y_i * (1 / (z - ω^i))
 
-        fracs[i] = frac; // ω^i / (z - ω^i)
+        fracs[i] = frac; // y_i / (z - ω^i)
         std::as_witness(fracs[i].limbs[0]);
         std::as_witness(fracs[i].limbs[1]);
         std::as_witness(fracs[i].limbs[2]);
@@ -369,14 +392,14 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
         //End of section that is only needed because `__compute_fracs` isn't working
         //*****************************************************************
 
-        // frac <-- roots[i] / (z + neg_roots[i])
-        // frac * (z + neg_roots[i]) - roots[i] = 0
+        // frac <-- ys[i] / (z + neg_roots[i])
+        // frac * (z + neg_roots[i]) - ys[i] = 0
         BigNum::evaluate_quadratic_expression(
             [[fracs[i]]],
             [[false]],
             [[z, NEGATIVE_ROOTS[i]]],
             [[false, false]],
-            [ROOTS[i]],
+            [ys[i]],
             [true]
         );
     }
@@ -415,8 +438,8 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
         for j in 0..8 {
             let k = i * 8 + j;
-            lhs[j] = ys[k]; // y_k
-            rhs[j] = fracs[k]; // ω^k / (z - ω^k)
+            lhs[j] = ROOTS[k]; // ω^k
+            rhs[j] = fracs[k]; // y_k / (z - ω^k)
             std::as_witness(lhs[j].limbs[0]);
             std::as_witness(lhs[j].limbs[1]);
             std::as_witness(lhs[j].limbs[2]);
@@ -425,11 +448,10 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
             std::as_witness(rhs[j].limbs[2]);
 
             // y_k * ( ω^k / (z - ω^k) )
-            let summand = ys[k].__mul(fracs[k]);
+            let summand = ROOTS[k].__mul(fracs[k]);
 
-            // partial_sum + ( ys[k] * fracs[k] ) -> partial_sum
+            // partial_sum + ( y_k * ( ω^k / (z - ω^k) ) -> partial_sum
             partial_sum = partial_sum.__add(summand);
-
             std::as_witness(partial_sum.limbs[0]);
             std::as_witness(partial_sum.limbs[1]);
             std::as_witness(partial_sum.limbs[2]);
@@ -437,15 +459,15 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
 
         /**
          * Seeking:
-         *                    ___i*8 - 1              ___i*8 + 7            
-         *                    \            ω^i        \            ω^k     
-         *      sum_out   =   /   y_i . ---------  +  /   y_k . ---------        
-         *                   /____       z - ω^i     /____       z - ω^k        
-         *                       0                    k = i*8                   
-         *                   ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^    
-         *                          sum                   partial_sum     
+         *                    ___i*8 - 1              ___i*8 + 7                     
+         *                    \            ω^i        \            /    y_k    \         
+         *      sum_out   =   /   y_i . ---------  +  /     ω^k . |  ---------  |        
+         *                   /____       z - ω^i     /____         \  z - ω^k  /              
+         *                       0                    k = i*8                               
+         *                   ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+         *                          sum                         partial_sum     
          *
-         *
+         * ... that is:
          *                                               
          *                    ___i*8 - 1              ___ 7          
          *                    \            ω^i        \              
@@ -474,7 +496,6 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
         );
 
         sum = sum_out;
-
         std::as_witness(sum.limbs[0]);
         std::as_witness(sum.limbs[1]);
         std::as_witness(sum.limbs[2]);
