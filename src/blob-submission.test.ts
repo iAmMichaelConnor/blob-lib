@@ -220,6 +220,8 @@ test("Test blob submission", async () => {
     serializedTransaction,
   });
 
+  await new Promise((f) => setTimeout(f, 1000));
+
   const submitBlobsReceipt = await client.getTransactionReceipt({
     hash: submitBlobsHash,
   });
@@ -257,6 +259,8 @@ test("Test blob submission", async () => {
   const verifyKzgProofHash = await client.sendRawTransaction({
     serializedTransaction: verifyKzgProofSerializedTransaction,
   });
+
+  await new Promise((f) => setTimeout(f, 1000));
 
   const verifyKzgProofReceipt = await client.getTransactionReceipt({
     hash: verifyKzgProofHash,
