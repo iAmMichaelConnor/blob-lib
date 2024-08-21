@@ -82,7 +82,10 @@ unconstrained fn __field_to_bytes(x: Field) -> [u8; 32] {
 
 unconstrained fn __field_to_bignum(x: Field) -> F {
     let x_bytes = __field_to_bytes(x);
+
     BigNum::from_byte_be(x_bytes)
+    // TODO: use this once the name has been updated in the bignum lib:
+    // BigNum::from_be_bytes(x_bytes)
 }
 
 unconstrained fn __field_to_bignum_limbs(x: Field) -> [Field; 3] {
@@ -404,8 +407,6 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
         );
     }
 
-    let SUM_SLICES = FIELDS_PER_BLOB / 8;
-
     // OK so...we can add multiple product terms into a sum...but I am not sure how many!
     // we are computing 254 * 254 bit products and we need to ensure each product limb doesn't overflow
     // each limb is 120 bits => 120 * 120 = 240 bits.
@@ -422,7 +423,8 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
      *                   /____       z - ω^i
      *                    i=0
      */
-    for i in 0..SUM_SLICES {
+    let NUM_PARTIAL_SUMS = FIELDS_PER_BLOB / 8;
+    for i in 0..NUM_PARTIAL_SUMS {
         let mut partial_sum: F = BigNum::new();
         let mut lhs: [F; 8] = [BigNum::new(); 8];
         let mut rhs = lhs;
@@ -512,6 +514,38 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     println(y);
 
     y
+}
+
+// Doesn't work - don't have time to debug right now
+// nargo test --show-output test_main
+#[test]
+fn test_main() {
+    let mut blob: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
+
+    blob[0] = BigNum { limbs: [0x1234, 0, 0] };
+    blob[1] = BigNum { limbs: [0xabcd, 0, 0] };
+    blob[2] = BigNum { limbs: [0x69, 0, 0] };
+
+    let kzg_commitment_in = [1, 2]; // this is made-up nonsense.
+
+    let (challenge_z, y, kzg_commitment) = main(blob, kzg_commitment_in);
+
+    println(challenge_z);
+    println(y);
+    println(kzg_commitment);
+}
+
+#[test]
+fn test_print() {
+    let x = 4;
+    println(f"x: {x}");
+}
+
+#[test]
+fn test_bignum_conversions() {
+    let x = 1000;
+    let x_bignum = __field_to_bignum(x);
+    println(f"x_bignum: {x_bignum}");
 }
 
 // nargo test --show-output test_barycentric
