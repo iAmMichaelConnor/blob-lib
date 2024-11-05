@@ -1,0 +1,12289 @@
+kzg_commitment = [1, 2]
+
+[[blob]]
+limbs = [0x1234, 0, 0]
+
+[[blob]]
+limbs = [0xabcd, 0, 0]
+
+[[blob]]
+limbs = [0x69, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
+
+[[blob]]
+limbs = [0, 0, 0]
