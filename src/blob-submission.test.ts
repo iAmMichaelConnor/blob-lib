@@ -10,8 +10,7 @@ import {
   SendRawTransactionErrorType,
 } from "viem";
 import { client, account } from "./client.js";
-import { viemKzg as kzg } from "./viem-kzg.js";
-import cKzg from "c-kzg";
+import { cKzg, viemKzg } from "./ckzg.js";
 const { BYTES_PER_BLOB } = cKzg;
 import * as path from "path";
 import { readJsonFile } from "./utils/json-io.js";
@@ -122,7 +121,7 @@ function createBlobData() {
   (blob as Buffer).write("abcd", 2 * 32 - 2, 2, "hex"); // each value is offset by a 32-byte 'Field' (as per the definition of "Field" in the eip-4844 spec).
   (blob as Buffer).write("69", 3 * 32 - 1, 1, "hex");
 
-  const commitment = kzg.blobToKzgCommitment(blob);
+  const commitment = viemKzg.blobToKzgCommitment(blob);
 
   {
     // These are the 0th and 1th roots of unity, taken from the eth consensus specs python lib.
@@ -159,7 +158,7 @@ function createBlobData() {
   input = bytesToHex(inputBytes);
 }
 
-beforeAll(async () => {
+beforeEach(async () => {
   await deployBlobSubmissionContract();
   createBlobData();
 });
@@ -169,7 +168,7 @@ test("Test basic blob submission to nowhere", async () => {
 
   const basicBlobRequest = await client.prepareTransactionRequest({
     blobs: [blob],
-    kzg,
+    kzg: viemKzg,
     maxFeePerBlobGas: parseGwei("30"),
     to: "0x0000000000000000000000000000000000000000",
     maxPriorityFeePerGas: 1_000_000_000n,
@@ -199,7 +198,7 @@ test("Test blob submission", async () => {
 
   const submitBlobsRequest = await client.prepareTransactionRequest({
     blobs: [blob],
-    kzg,
+    kzg: viemKzg,
     maxFeePerBlobGas: parseGwei("30"),
     to: deployedContractAddress,
     data: submitBlobsFunctionData,
@@ -317,6 +316,54 @@ test("Test blob submission", async () => {
         "reverted with reason string 'Point evaluation precompile failed'"
       );
     }
+  }
+
+  //*************************************** */
+});
+
+test("Test point evaluation for non-existent blob (for batching)", async () => {
+  // Ok, in this test, the blob _hasn't_ been submitted, but this is still a
+  // valid kzg opening proof, so it should still work.
+
+  const verifyUnrelatedKzgProofFunctionData = encodeFunctionData({
+    abi,
+    functionName: "verifyUnrelatedKzgProof",
+    args: [input],
+  });
+
+  const verifyUnrelatedKzgProofRequest = await client.prepareTransactionRequest(
+    {
+      to: deployedContractAddress,
+      data: verifyUnrelatedKzgProofFunctionData,
+    }
+  );
+
+  const verifyUnrelatedKzgProofSerializedTransaction =
+    await client.signTransaction(verifyUnrelatedKzgProofRequest);
+
+  const verifyUnrelatedKzgProofHash = await client.sendRawTransaction({
+    serializedTransaction: verifyUnrelatedKzgProofSerializedTransaction,
+  });
+
+  await new Promise((f) => setTimeout(f, 1000));
+
+  const verifyUnrelatedKzgProofReceipt = await client.getTransactionReceipt({
+    hash: verifyUnrelatedKzgProofHash,
+  });
+
+  const verifyUnrelatedKzgProofLogs = parseEventLogs({
+    abi,
+    logs: verifyUnrelatedKzgProofReceipt.logs,
+  });
+
+  expect(verifyUnrelatedKzgProofLogs[0].eventName).toBe(
+    "PointEvaluationSuccess"
+  );
+  expect(verifyUnrelatedKzgProofLogs[0].args.hasOwnProperty("_success")).toBe(
+    true
+  );
+  if ("_success" in verifyUnrelatedKzgProofLogs[0].args) {
+    expect(verifyUnrelatedKzgProofLogs[0].args?._success).toBe(true);
   }
 
   //*************************************** */

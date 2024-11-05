@@ -7,8 +7,8 @@
     "build": "tsc",
     "start": "node dest/index.js",
     "test": "export PRIV_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 && node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test:anvil": "concurrently \"anvil\" \"sleep 1 &&  yarn test\"",
-    "test:hardhat": "concurrently \"npx hardhat node\" \"sleep 1 && yarn test\""
+    "test:anvil": "concurrently \"anvil\" \"sleep 1 &&  yarn test --runInBand\"",
+    "test:hardhat": "concurrently \"npx hardhat node\" \"sleep 1 && yarn test --runInBand\""
   },
   "keywords": [],
   "author": "",
