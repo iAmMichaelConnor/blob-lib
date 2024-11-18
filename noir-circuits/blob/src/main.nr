@@ -28,7 +28,9 @@ use crate::{
 
 use std::hash::poseidon2;
 
-global LIMB_MAX = 2.pow_32(120);
+global TWO_POW_56: u64 = 0x100000000000000;
+global TWO_POW_64: Field = 0x10000000000000000;
+global TWO_POW_120: Field = 0x1000000000000000000000000000000;
 
 unconstrained fn __batch_invert_impl<let N: u32>(mut x: [F; N]) -> [F; N] {
     let mut accumulator: F = BigNum::one();
@@ -58,21 +60,21 @@ unconstrained fn __batch_invert_impl<let N: u32>(mut x: [F; N]) -> [F; N] {
 unconstrained fn __compute_fracs(z: F, ys: [F; FIELDS_PER_BLOB]) -> [F; FIELDS_PER_BLOB] {
     let mut denoms: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
-        denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - ω^i)
+        denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - w^i)
     }
-    let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - ω^i), for all i
+    let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - w^i), for all i
 
     let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
-        let inv_denom = inv_denoms[i]; // 1 / (z - ω^i)
+        let inv_denom = inv_denoms[i]; // 1 / (z - w^i)
 
-        fracs[i] = ys[i].__mul(inv_denom); // y_i / (z - ω^i)
+        fracs[i] = ys[i].__mul(inv_denom); // y_i / (z - w^i)
     }
     fracs
 }
 
 unconstrained fn __field_to_bytes(x: Field) -> [u8; 32] {
-    let x_bytes_slice = x.to_be_bytes(32);
+    let x_bytes_slice = x.to_be_bytes::<32>();
     let mut x_bytes = [0; 32];
     for i in 0..32 {
         x_bytes[i] = x_bytes_slice[i];
@@ -81,9 +83,27 @@ unconstrained fn __field_to_bytes(x: Field) -> [u8; 32] {
 }
 
 unconstrained fn __field_to_bignum(x: Field) -> F {
-    let x_bytes = __field_to_bytes(x);
+    // Here we're taking advantage of truncating 64 bit limbs from the input field
+    // and then subtracting them from the input such that the field division is equivalent to integer division.
+    let low_120_lower_64 = (x as u64) as Field;
+    let x_shifted_64 = (x - low_120_lower_64) / TWO_POW_64;
+    let low_120_upper_56 = ((x_shifted_64 as u64) % TWO_POW_56) as Field;
+    let low_120 = low_120_lower_64 + TWO_POW_64 * low_120_upper_56;
 
-    BigNum::from_byte_be(x_bytes)
+    let x_shifted_120 = (x_shifted_64 - low_120_upper_56) / (TWO_POW_56 as Field);
+
+    let mid_120_lower_64 = (x_shifted_120 as u64) as Field;
+    let x_shifted_184 = (x_shifted_120 - mid_120_lower_64) / TWO_POW_64;
+    let mid_120_upper_56 = ((x_shifted_184 as u64) % TWO_POW_56) as Field;
+    let mid_120 = mid_120_lower_64 + TWO_POW_64 * mid_120_upper_56;
+
+    let x_shifted_240 = (x_shifted_184 - mid_120_upper_56) / (TWO_POW_56 as Field);
+
+    let hi_120_lower_64 = (x_shifted_240 as u64) as Field;
+    // We don't need to go further, as we've reached 304 bits, and a Field is 254 bits.
+    let hi_120 = hi_120_lower_64;
+
+    BigNum { limbs: [low_120, mid_120, hi_120]}
     // TODO: use this once the name has been updated in the bignum lib:
     // BigNum::from_be_bytes(x_bytes)
 }
@@ -96,12 +116,17 @@ unconstrained fn __field_to_bignum_limbs(x: Field) -> [Field; 3] {
 // for the bls12-381 Fr field).
 fn field_to_bignum(x: Field) -> F {
     let __x_limbs = __field_to_bignum_limbs(x);
+    println(f"x_limbs: {__x_limbs}");
 
-    let mut check = __x_limbs[3 - 1];
+    let mut check = __x_limbs[2];
+    println(f"check: {check}");
     for i in 1..3 {
-        check *= LIMB_MAX;
-        check += __x_limbs[3 - i - 1];
+        check *= TWO_POW_120;
+        check += __x_limbs[2 - i];
+        println(f"i: {i}, check: {check}");
     }
+    println(f"x: {x}");
+    println(f"check: {check}");
     assert(check == x);
 
     BigNum { limbs: __x_limbs }
@@ -115,16 +140,16 @@ fn unsafe_bignum_to_field(x: F) -> Field {
     let mut result: Field = 0;
     result += x.limbs[3 - 1];
     for i in 1..3 {
-        result *= LIMB_MAX;
+        result *= TWO_POW_120;
         result += x.limbs[3 - i - 1];
     }
     result
 }
 
 fn bignum_to_bytes(x: F) -> [u8] {
-    let limb_0_bytes: [u8] = x.limbs[0].to_be_bytes(15);
-    let limb_1_bytes: [u8] = x.limbs[1].to_be_bytes(15);
-    let limb_2_bytes: [u8] = x.limbs[2].to_be_bytes(2);
+    let limb_0_bytes: [u8] = x.limbs[0].to_be_bytes::<15>();
+    let limb_1_bytes: [u8] = x.limbs[1].to_be_bytes::<15>();
+    let limb_2_bytes: [u8] = x.limbs[2].to_be_bytes::<2>();
     let out = limb_2_bytes.append(limb_1_bytes).append(limb_0_bytes);
     std::static_assert(out.len() == 32, "bad byte decomposition of bignum");
     out
@@ -260,9 +285,9 @@ fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F
 
 /**
  *                    ___d-1              
- *         z^d - 1    \            ω^i    
+ *         z^d - 1    \            w^i    
  * p(z) = --------- . /   y_i . ---------
- *            d      /____       z - ω^i   
+ *            d      /____       z - w^i   
  *                    i=0                 
  *
  * p(z) = factor . sum( y_i . num / denom )
@@ -271,7 +296,7 @@ fn main(blob: [F; FIELDS_PER_BLOB], kzg_commitment: [Field; 2]) -> pub (Field, F
  * where d = 4096
  *
  * Precompute:
- * - The d roots of unity ω^i (plus maybe their negatives for z - ω^i computations).
+ * - The d roots of unity w^i (plus maybe their negatives for z - w^i computations).
  * - (1 / d)
  * 
  * @param z
@@ -342,52 +367,52 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     let mut sum: F = BigNum::new();
 
     // Making a call to this function causes a "stack too deep" error, so I've put the body of that function here, instead:
-    // let fracs = __compute_fracs(z, ys); // { y_i / (z - ω^i) }
+    // let fracs = __compute_fracs(z, ys); // { y_i / (z - w^i) }
 
-    /**
-      *
-      * Note: it's more efficient (saving 30k constraints) to compute:
-      *    ___d-1                        
-      *    \     /    y_i    \          
-      *    /    |  ---------  | . ω^i   
-      *   /____  \  z - ω^i  /         
-      *    i=0                        
-      *            ^^^^^^^^^
-      *              frac
-      *
-      * ... than to compute:
-      *
-      *    ___d-1             
-      *    \          /    ω^i    \
-      *    /   y_i . |  ---------  |
-      *   /____       \  z - ω^i  /
-      *    i=0                      
-      *     
-      * perhaps because all the ω^i terms are constant witnesses?
-      *
-      */
+    // /**
+    //   *
+    //   * Note: it's more efficient (saving 30k constraints) to compute:
+    //   *    ___d-1                        
+    //   *    \     /    y_i    \          
+    //   *    /    |  ---------  | . w^i   
+    //   *   /____  \  z - w^i  /         
+    //   *    i=0                        
+    //   *            ^^^^^^^^^
+    //   *              frac
+    //   *
+    //   * ... than to compute:
+    //   *
+    //   *    ___d-1             
+    //   *    \          /    w^i    \
+    //   *    /   y_i . |  ---------  |
+    //   *   /____       \  z - w^i  /
+    //   *    i=0                      
+    //   *     
+    //   * perhaps because all the w^i terms are constant witnesses?
+    //   *
+    //   */
 
     //*****************************************************************
     // This section is only needed because `__compute_fracs` isn't working (stack too deep error).
 
-    let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB]; // y_i / (z - ω^i), for all i
+    let mut fracs: [F; FIELDS_PER_BLOB] = [BigNum::new(); FIELDS_PER_BLOB]; // y_i / (z - w^i), for all i
 
     let mut denoms = [BigNum::new(); FIELDS_PER_BLOB];
     for i in 0..FIELDS_PER_BLOB {
-        denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - ω^i)
+        denoms[i] = z.__add(NEGATIVE_ROOTS[i]); // (z - w^i)
     }
 
     // If you're seeing a `bug` warning for this line, I think it's fine.
     // Ideally, we'd be using `__compute_fracs`, anyway, but we're getting a "stack too deep" error.
-    let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - ω^i), for all i
+    let inv_denoms = __batch_invert_impl(denoms); // 1 / (z - w^i), for all i
 
     for i in 0..FIELDS_PER_BLOB {
         let num = ys[i];
-        let inv_denom = inv_denoms[i]; // 1 / (z - ω^i)
+        let inv_denom = inv_denoms[i]; // 1 / (z - w^i)
 
-        let frac = num.__mul(inv_denom); // y_i * (1 / (z - ω^i))
+        let frac = num.__mul(inv_denom); // y_i * (1 / (z - w^i))
 
-        fracs[i] = frac; // y_i / (z - ω^i)
+        fracs[i] = frac; // y_i / (z - w^i)
         std::as_witness(fracs[i].limbs[0]);
         std::as_witness(fracs[i].limbs[1]);
         std::as_witness(fracs[i].limbs[2]);
@@ -415,33 +440,33 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
     // which implies...we can accomodate up to EIGHT additions of product terms before we risk overflowing
     // (this is really messy! I never considered the case of giant linear sequences of products)
     let mut sum: F = BigNum::new();
-    /**
-     * Seeking:
-     *                    ___d-1 
-     *                    \            ω^i
-     *              sum = /   y_i . ---------
-     *                   /____       z - ω^i
-     *                    i=0
-     */
+    // /**
+    //  * Seeking:
+    //  *                    ___d-1 
+    //  *                    \            w^i
+    //  *              sum = /   y_i . ---------
+    //  *                   /____       z - w^i
+    //  *                    i=0
+    //  */
     let NUM_PARTIAL_SUMS = FIELDS_PER_BLOB / 8;
     for i in 0..NUM_PARTIAL_SUMS {
         let mut partial_sum: F = BigNum::new();
         let mut lhs: [F; 8] = [BigNum::new(); 8];
         let mut rhs = lhs;
 
-        /**
-         * Seeking:
-         *                    ___i*8 + 7 
-         *                    \            ω^k
-         *      partial_sum = /   y_k . ---------
-         *                   /____       z - ω^k
-         *                    k=i*8 + 0
-         */
+        // /**
+        //  * Seeking:
+        //  *                    ___i*8 + 7 
+        //  *                    \            w^k
+        //  *      partial_sum = /   y_k . ---------
+        //  *                   /____       z - w^k
+        //  *                    k=i*8 + 0
+        //  */
 
         for j in 0..8 {
             let k = i * 8 + j;
-            lhs[j] = ROOTS[k]; // ω^k
-            rhs[j] = fracs[k]; // y_k / (z - ω^k)
+            lhs[j] = ROOTS[k]; // w^k
+            rhs[j] = fracs[k]; // y_k / (z - w^k)
             std::as_witness(lhs[j].limbs[0]);
             std::as_witness(lhs[j].limbs[1]);
             std::as_witness(lhs[j].limbs[2]);
@@ -449,36 +474,36 @@ fn barycentric_evaluate_blob_at_z(z: F, ys: [F; FIELDS_PER_BLOB]) -> F {
             std::as_witness(rhs[j].limbs[1]);
             std::as_witness(rhs[j].limbs[2]);
 
-            // y_k * ( ω^k / (z - ω^k) )
+            // y_k * ( w^k / (z - w^k) )
             let summand = ROOTS[k].__mul(fracs[k]);
 
-            // partial_sum + ( y_k * ( ω^k / (z - ω^k) ) -> partial_sum
+            // partial_sum + ( y_k * ( w^k / (z - w^k) ) -> partial_sum
             partial_sum = partial_sum.__add(summand);
             std::as_witness(partial_sum.limbs[0]);
             std::as_witness(partial_sum.limbs[1]);
             std::as_witness(partial_sum.limbs[2]);
         }
 
-        /**
-         * Seeking:
-         *                    ___i*8 - 1              ___i*8 + 7                     
-         *                    \            ω^i        \            /    y_k    \         
-         *      sum_out   =   /   y_i . ---------  +  /     ω^k . |  ---------  |        
-         *                   /____       z - ω^i     /____         \  z - ω^k  /              
-         *                       0                    k = i*8                               
-         *                   ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
-         *                          sum                         partial_sum     
-         *
-         * ... that is:
-         *                                               
-         *                    ___i*8 - 1              ___ 7          
-         *                    \            ω^i        \              
-         *      sum_out   =   /   y_i . ---------  +  /   lhs[j] . rhs[j]
-         *                   /____       z - ω^i     /____         
-         *                       0                    j = 0              
-         *                   ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^ 
-         *                          sum                   partial_sum     
-         */
+        // /**
+        //  * Seeking:
+        //  *                    ___i*8 - 1              ___i*8 + 7                     
+        //  *                    \            w^i        \            /    y_k    \         
+        //  *      sum_out   =   /   y_i . ---------  +  /     w^k . |  ---------  |        
+        //  *                   /____       z - w^i     /____         \  z - w^k  /              
+        //  *                       0                    k = i*8                               
+        //  *                   ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+        //  *                          sum                         partial_sum     
+        //  *
+        //  * ... that is:
+        //  *                                               
+        //  *                    ___i*8 - 1              ___ 7          
+        //  *                    \            w^i        \              
+        //  *      sum_out   =   /   y_i . ---------  +  /   lhs[j] . rhs[j]
+        //  *                   /____       z - w^i     /____         
+        //  *                       0                    j = 0              
+        //  *                   ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^ 
+        //  *                          sum                   partial_sum     
+        //  */
 
         let mut sum_out = sum.__add(partial_sum);
 
@@ -543,8 +568,11 @@ fn test_print() {
 
 #[test]
 fn test_bignum_conversions() {
-    let x = 1000;
+    let x = 0xABFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
     let x_bignum = __field_to_bignum(x);
+    assert(x_bignum.limbs[0] == 0xffffffffffffffffffffffffffffff);
+    assert(x_bignum.limbs[1] == 0xffffffffffffffffffffffffffffff);
+    assert(x_bignum.limbs[2] == 0xab);
     println(f"x_bignum: {x_bignum}");
 }
 

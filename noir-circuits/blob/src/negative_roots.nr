@@ -1,4 +1,10 @@
-use dep::bigint::BigNum;
+use dep::bignum::BigNum;
+
+// Uncomment this for faster compilation and execution.
+
+// use crate::config::{F, FIELDS_PER_BLOB};
+
+// global NEGATIVE_ROOTS: [F; FIELDS_PER_BLOB] = [ BigNum { limbs: [ 0x000000000000000000000000000000, 0x000000000000000000000000000000, 0x000000 ] }; FIELDS_PER_BLOB ]; 
 
 global NEGATIVE_ROOTS = [
     BigNum { limbs: [ 0xbda402fffe5bfeffffffff00000000, 0xa753299d7d483339d80809a1d80553, 0x0073ed ] } ,
